@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.navMenu {
+	&__container {
+		position: absolute;
+		top: -10%;
+		left: -10%;
+		width: 45%;
+		height: 150%;
+		background: $navMenu-bg;
+		z-index: 100;
+		transform: rotate(-20deg);
+
+		&::before {
+			content: "";
+			background: $orange-color;
+			width: 50px;
+			height: 150vh;
+			position: absolute;
+			top: 0;
+			left: 92%;
+			box-shadow: $navMenu_wideLine-boxShadow;
+		}
+
+		&::after {
+			content: "";
+			background: $orange-color;
+			width: 35px;
+			height: 150vh;
+			position: absolute;
+			top: 0;
+			left: 100%;
+			box-shadow: $navMenu_narrowLine-boxShadow;
+		}
+	}
+	&__title {
+		text-transform: uppercase;
+		color: white;
+		position: absolute;
+		font-size: 32px;
+		top: 13%;
+		left: 55%;
+    z-index: 100;
+    transform: rotate(20deg);
+	}
+}

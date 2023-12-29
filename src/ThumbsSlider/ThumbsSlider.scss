@@ -1,0 +1,35 @@
+@import "../variables.scss";
+
+.thumbsSlider {
+	transform: rotate(20deg);
+	top: 15%;
+	left: 5%;
+	width: 30%;
+	height: 70vh;
+	overflow: visible;
+}
+
+.thumbsSlider .swiper-slide {
+	filter: grayscale(1);
+	transition: all 0.2s linear;
+}
+
+.thumbsSlider .swiper-slide-active {
+	filter: grayscale(0);
+}
+
+.thumbsSlider .swiper-slide-prev {
+	transform: translateX(-1% * $thumbsSlider_slide-shift);
+}
+
+.thumbsSlider .swiper-slide-next {
+	transform: translateX(1% * $thumbsSlider_slide-shift);
+}
+
+.thumbsSlider .swiper-slide-before-prev {
+	transform: translateX(2 * $thumbsSlider_slide-shift * (-1%));
+}
+
+.thumbsSlider .swiper-slide-after-next {
+	transform: translateX(2 * $thumbsSlider_slide-shift * 1%);
+}

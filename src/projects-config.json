@@ -1,0 +1,50 @@
+[
+	{
+		"title": "entertainment-app",
+		"img": "./assets/entertainment-app-min.webp"
+	},
+  {
+		"title": "invoices-app",
+		"img": "./assets/invoices-app-min.webp"
+	},
+  {
+		"title": "audiophile",
+		"img": "./assets/audiophile-min.webp"
+	},
+  {
+		"title": "photo-studio",
+		"img": "./assets/photo-studio-min.webp"
+	},
+  {
+		"title": "rock-paper-scissors-lizard-spock",
+		"img": "./assets/rock-paper-scissors-lizard-spock-min.webp"
+	},
+  {
+		"title": "mesto",
+		"img": "./assets/mesto-min.webp"
+	},
+  {
+		"title": "planets-fact",
+		"img": "./assets/planets-fact-min.webp"
+	},
+  {
+		"title": "theater",
+		"img": "./assets/theater-min.webp"
+	},
+	{
+		"title": "russian-travel",
+		"img": "./assets/russian-travel-min.webp"
+	},
+  {
+		"title": "singer-landing",
+		"img": "./assets/singer-landing-min.webp"
+	},
+  {
+		"title": "tribe",
+		"img": "./assets/tribe-min.webp"
+	},
+	{
+		"title": "how-to-learn",
+		"img": "./assets/how-to-learn-min.webp"
+	}
+]
