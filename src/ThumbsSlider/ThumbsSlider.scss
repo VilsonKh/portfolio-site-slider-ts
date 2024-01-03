@@ -3,15 +3,20 @@
 .thumbsSlider {
 	transform: rotate(20deg);
 	top: 15%;
-	left: 5%;
-	width: 30%;
-	height: 70vh;
-	overflow: visible;
+	left: 15%;
+	width: 70%;
+	height: 85vh;
+
+	& .swiper-wrapper {
+		align-items: center;
+	}
 }
 
 .thumbsSlider .swiper-slide {
 	filter: grayscale(1);
 	transition: all 0.2s linear;
+	max-width: 300px;
+	max-height: 160px !important;
 }
 
 .thumbsSlider .swiper-slide-active {
