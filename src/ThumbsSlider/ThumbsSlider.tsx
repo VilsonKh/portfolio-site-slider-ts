@@ -56,7 +56,7 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 		>
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
-					<SwiperSlide data-index={index}>
+					<SwiperSlide data-index={index} key={index}>
 						<img src={project.img} alt={project.title} />
 					</SwiperSlide>
 				);

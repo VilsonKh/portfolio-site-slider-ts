@@ -16,9 +16,9 @@ const MainSlider = ({ thumbsSwiper, setMainSwiper, setCurrentIndex }: { thumbsSw
 
 	return (
 		<Swiper className="mainSlider" {...sliderParams}  controller={thumbsSwiper ? {control: thumbsSwiper} : undefined}>
-			{projectsConfig.map((project): JSX.Element => {
+			{projectsConfig.map((project, index): JSX.Element => {
 				return (
-					<SwiperSlide>
+					<SwiperSlide key={index}>
 						<img src={project.img} alt={project.title} />
 					</SwiperSlide>
 				);
