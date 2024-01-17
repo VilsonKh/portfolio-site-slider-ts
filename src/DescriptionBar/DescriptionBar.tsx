@@ -1,52 +1,45 @@
 import "./DescriptionBar.scss";
 import projectsConfig from "../projects-config.json";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperButtonNext from "../SwiperButtonNext/SwiperButtonNext";
 
 const DescriptionBar = ({ slideIndex }: { slideIndex: any }) => {
-	interface IProject {
-		title: string;
-		img: string;
-		description: string;
-		mainLink: string;
-		githubLink: string;
-		technologies: {
-			preview: string;
-			full: string;
-		};
-	}
-
-	const [nextSlide, setNextSlide] = useState(false);
-
-	const nodeRef = useRef(null);
-
 	return (
 		<div className="descriptionBar">
 			{projectsConfig.map((project: any, index: number) => {
 				if (index === slideIndex) {
 					return (
-						<div className={`descriptionBar__container opacity-anim ${nextSlide ? "move-out" : "move-in"}`} key={index} ref={nodeRef}>
-							<p className="descriptionBar__text ">{project.description}</p>
-							<div className="descriptionBar__buttonGroup">
-								<a href={project.githubLink} className="descriptionBar__link">
-									<img src="./assets/icon-github.svg" alt="" />
-								</a>
-								<a href={project.mainLink} className="descriptionBar__link">
-									<img src="./assets/personalLink.svg" alt="" />
-								</a>
-							</div>
-							<div className="descriptionBar__technologiesContainer" onClick={() => setNextSlide(true)}>
-								<p className="descriptionBar__technologies">{project.technologies.preview}</p>
-								<button className="descriptionBar__arrow">
-									<img src="./assets/icon-arrow.svg" alt="" />
-								</button>
-							</div>
+						<div className={`descriptionBar__container opacity-anim`} key={index}>
+							<Swiper allowTouchMove={false}>
+								<SwiperSlide>
+									<p className="descriptionBar__text ">{project.description}</p>
+									<div className="descriptionBar__footer">
+										<div className="descriptionBar__technologiesContainer">
+											<p className="descriptionBar__technologies">{project.technologies.preview}</p>
+											<SwiperButtonNext>
+												<img src="./assets/icon-arrow.svg" alt="" />
+											</SwiperButtonNext>
+										</div>
+										<div className="descriptionBar__buttonGroup">
+											<a href={project.githubLink} className="descriptionBar__link">
+												<img src="./assets/icon-github.svg" alt="" />
+											</a>
+											<a href={project.mainLink} className="descriptionBar__link">
+												<img src="./assets/personalLink.svg" alt="" />
+											</a>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>{project.technologies.full}</SwiperSlide>
+							</Swiper>
 						</div>
 					);
 				}
 				return null;
 			})}
-      <button><img src="./assets/icon-arrow.svg" alt="" /></button>
+			<button>
+				<img src="./assets/icon-arrow.svg" alt="" />
+			</button>
 		</div>
 	);
 };

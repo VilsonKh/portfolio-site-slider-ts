@@ -10,25 +10,22 @@
   z-index: 99;
 
   &__container {
-    width: 55%;
+    width: 50%;
     height: 100%;
     margin-left: auto;
     position: relative;
     transition: all .3s linear;
+    padding: 15px 15px 15px 0;
   }
 
   &__text {
     color: white;
     font-size: 24px;
-    padding: 15px;
     max-height: 150px;
     overflow: scroll;
   }
 
   &__buttonGroup {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
     width: 150px;
     display: flex;
     justify-content: space-between;
@@ -44,7 +41,7 @@
     color: $orange-color;
     font-size: 24px;
     font-weight: 700;
-    padding: 15px;
+
     text-transform: uppercase;
   }
 
@@ -52,14 +49,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    bottom: 5%;
-    left: 0;
     cursor: pointer;
+    padding-top: 15px;
   }
 
   &__arrow {
     width: 50px;
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
