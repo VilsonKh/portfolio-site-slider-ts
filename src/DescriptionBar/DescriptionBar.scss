@@ -8,6 +8,8 @@
   width: 100%;
   background: $descriptionBar-bg;
   z-index: 99;
+  transition: all .3s linear;
+  box-shadow: 0px -12px 22px 0px rgba(0,0,0,0.5);
 
   &__container {
     width: 50%;
@@ -41,7 +43,6 @@
     color: $orange-color;
     font-size: 24px;
     font-weight: 700;
-
     text-transform: uppercase;
   }
 
@@ -49,8 +50,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     padding-top: 15px;
+    color: white;
   }
 
   &__arrow {
@@ -58,10 +59,42 @@
     cursor: pointer;
   }
 
+  &__arrowBack {
+    width: 50px;
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
+
   &__footer {
     display: flex;
     justify-content: space-between;
   }
+
+  &__technologiesFull {
+    color: white;
+  }
+
+  &__technologiesGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,200px);
+    gap: 20px;
+  }
+
+  &__techItem {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+  }
+
+  &__techTitle {
+    font-size: 20px;
+  }
+
+  &__techImg {
+    width: 50px;
+  }
+
 }
 
 .opacity-anim {
@@ -86,21 +119,8 @@ animation: opacity .3s linear;
 }
 
 
+.descriptionBar.hide {
+  transform: translate(0, 50%);
+}
 
-// .text-opacity {
-//   &-enter {
-//     opacity: 0;
-//   }
 
-//   &-enter-active {
-//     opacity: 1;
-//   }
-
-//   &-exit {
-//     opacity: 1;
-//   }
-
-//   &-exit-active {
-//     opacity: 0;
-//   }
-// }

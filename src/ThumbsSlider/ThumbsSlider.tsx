@@ -5,7 +5,7 @@ import "./ThumbsSlider.scss";
 
 const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => void; mainSwiper: any }) => {
 	const sliderParams = {
-		slidesPerView: 4,
+		slidesPerView: 3,
 		spaceBetween: 50,
 		initialSlide: 1,
 		centeredSlides: true,
@@ -57,7 +57,7 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
 					<SwiperSlide data-index={index} key={index}>
-						<img src={project.img} alt={project.title} />
+						<img src={project.img.link} alt={project.title} />
 					</SwiperSlide>
 				);
 			})}

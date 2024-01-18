@@ -1,84 +1,136 @@
 [
 	{
 		"title": "entertainment-app",
-		"img": "./assets/entertainment-app-min.webp",
+		"img": { "link": "./assets/entertainment-app-min.webp", "shift": 20 },
 		"description": "Entertainment App is a React-based project that serves as a convenient application for browsing and tracking movies and TV shows. The app features a content library that allows users to discover their favorite films and series, add bookmarks, and navigate between different tabs and content cards.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/entertainment-app",
 		"technologies": {
 			"preview": "React, Redux, Firebase",
-			"full": ["React", "SCSS", "React-hook-form", "Yup", "Redux-toolkit", "React-router", "Firestore", "React testing library", "Jest", "Flex", "Grid", "HTML"]
+			"full": [
+				{ "title": "React", "img": "./assets/React.svg" },
+				{ "title": "SCSS", "img": "./assets/sass.svg" },
+				{ "title": "React-hook-form", "img": "./assets/react-hook-form.svg" },
+				{ "title": "Yup", "img": "" },
+				{ "title": "Redux-toolkit", "img": "./assets/redux.svg" },
+				{ "title": "Firestore", "img": "./assets/firestore.svg" },
+				{ "title": "React testing library", "img": "./assets/react-testing-library.png" },
+				{ "title": "Jest", "img": "./assets/jest.png" },
+				{ "title": "Flex", "img": "" },
+				{ "title": "Grid", "img": "" },
+				{ "title": "HTML", "img": "./assets/HTML.svg" }
+			]
 		}
 	},
 	{
 		"title": "invoices-app",
-		"img": "./assets/invoices-app-min.webp",
+		"img": {"link": "./assets/invoices-app-min.webp", "shift": 20},
 		"description": "The Invoice App simplifies the process of creating invoices through a user-friendly form. Users can input necessary details, such as client information, itemized charges, and due dates. The app employs the React Hook Form library for form validation, ensuring that all information entered is accurate and complete. If an invoice becomes irrelevant or is no longer needed, the app offers a deletion process. The app covered with tests.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/invoice-app",
 		"technologies": {
 			"preview": "React, Firebase, SCSS",
-			"full": ""
+			"full": [
+				{ "title": "HTML", "img": "" },
+				{ "title": "SCSS", "img": "" },
+				{ "title": "Flex", "img": "" },
+				{ "title": "Grid", "img": "" },
+				{ "title": "React", "img": "" },
+				{ "title": "React-hook-form", "img": "" },
+				{ "title": "React Transition Group", "img": "" },
+				{ "title": "Firestore", "img": "" },
+				{ "title": "React Testing Library", "img": "" },
+				{ "title": "", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "audiophile",
-		"img": "./assets/audiophile-min.webp",
+		"img": {"link": "./assets/audiophile-min.webp", "shift": 20},
 		"description": "The Audiophile project features user-friendly checkouts form with validation. Users have the convenience of adding products to their shopping cart as they browse. The website is responsive, and the shopping cart persists across pages using localStorage. An integrated order form simplifies order creation.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/audiophile",
 		"technologies": {
-			"preview": "JQuery, SCSS",
-			"full": ""
+			"preview": "jQuery, SCSS",
+			"full": [
+				{ "title": "HTML", "img": "" },
+				{ "title": "SCSS", "img": "" },
+				{ "title": "Flex", "img": "" },
+				{ "title": "Grid", "img": "" },
+				{ "title": "jQuery", "img": "" },
+				{ "title": "jQuery-validation", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "photo-studio",
-		"img": "./assets/photo-studio-min.webp",
+		"img": {"link": "./assets/photo-studio-min.webp", "shift": 20},
 		"description": "The website offers information, highlighting the studio's portfolio, services, and expertise. It features a captivating collection of photographs, demonstrating the studio's artistic vision and technical skill. The website also includes detailed information about the studio's services, such as portrait, group or family fotography.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/photo-studio",
 		"technologies": {
-			"preview": "JQuery, CSS",
-			"full": ""
+			"preview": "jQuery, CSS",
+			"full": [
+				{ "title": "HTML", "img": "" },
+				{ "title": "CSS", "img": "" },
+				{ "title": "jQuery", "img": "" },
+				{ "title": "CSS animations", "img": "" },
+				{ "title": "Flex", "img": "" },
+				{ "title": "Grid", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "rock-paper-scissors-lizard-spock",
-		"img": "./assets/rock-paper-scissors-lizard-spock-min.webp",
+		"img": {"link": "./assets/rock-paper-scissors-lizard-spock-min.webp", "shift": 20},
 		"description": "",
 		"mainLink": "",
 		"githubLink": "",
 		"technologies": {
-			"preview": "",
-			"full": ""
+			"preview": "React, TypeScript, SCSS",
+			"full": [
+				{ "title": "React", "img": "" },
+				{ "title": "TypeScript", "img": "" },
+				{ "title": "SCSS", "img": "" },
+				{ "title": "HTML", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "mesto",
-		"img": "./assets/mesto-min.webp",
+		"img": {"link": "./assets/mesto-min.webp", "shift": 20},
 		"description": "The website allows users to add, delete, and like images, as well as edit their profile and change avatar. The user's photos are stored in a Firestore database. Also it includes form validation to ensure user input is correct and checks for the presence of images at the specified user-provided addresses.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/mesto",
 		"technologies": {
 			"preview": "JS, CSS, Firebase",
-			"full": ""
+			"full": [
+				{ "title": "HTML", "img": "" },
+				{ "title": "CSS", "img": "" },
+				{ "title": "JS", "img": "" },
+				{ "title": "Firestore", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "planets-fact",
-		"img": "./assets/planets-fact-min.webp",
+		"img": {"link": "./assets/planets-fact-min.webp", "shift": 20},
 		"description": "Planets Facts project dedicated to fascinating facts about the planets of our solar system. Here, you can discover captivating details about each planet, their unique features.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/planet-facts",
 		"technologies": {
 			"preview": "JS, CSS, HTML",
-			"full": []
+			"full": [
+				{ "title": "HTML", "img": "" },
+				{ "title": "CSS", "img": "" },
+				{ "title": "JS", "img": "" },
+				{ "title": "AnimeJS", "img": "" }
+			]
 		}
 	},
 	{
 		"title": "theater",
-		"img": "./assets/theater-min.webp",
+		"img": {"link": "./assets/theater-min.webp", "shift": 20},
 		"description": "The website offers visitors an opportunity to explore the theater's diverse productions. The website features a captivating slider showcasing images from past perfomances, providing visitors with a glimpse into the visually stunning and emotive world of theater. Furthermore, the website offers a convenient callback form allowing visitors to easily get in touch with the theater.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/theatre",
@@ -89,46 +141,46 @@
 	},
 	{
 		"title": "russian-travel",
-		"img": "./assets/russian-travel-min.webp",
+		"img": {"link": "./assets/russian-travel-min.webp", "shift": 20},
 		"description": "The website offers a wide range of features and resources to enhance your travel experience in Russia. It provides users with access to comprehensive and well-researched textual articles that cover various aspects of Russian travel, such as popular destinations, historical landmarks, cultural experiences, and outdoor adventures.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/russian-travel",
 		"technologies": {
-			"preview": "HTML, CSS, BEM",
-			"full": []
+			"preview": "HTML, CSS, jQuery",
+			"full": ["HTML", "CSS", "jQuery", "adaptive layout", "BEM"]
 		}
 	},
 	{
 		"title": "singer-landing",
-		"img": "./assets/singer-landing-min.webp",
+		"img": {"link": "./assets/singer-landing-min.webp", "shift": 20},
 		"description": "This website allows visitors to explore the singer's discography, biography, upcoming events, and latest news. Also video and music were implemented.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/singer-landing",
 		"technologies": {
-			"preview": "JQuery, CSS, HTML",
-			"full": []
+			"preview": "HTML, CSS, jQuery",
+			"full": ["HTML", "CSS", "jQuery"]
 		}
 	},
 	{
 		"title": "tribe",
-		"img": "./assets/tribe-min.webp",
+		"img": {"link": "./assets/tribe-min.webp", "shift": 20},
 		"description": "The website provides information about the agency's services, musicians, and upcoming events. It uses animations and sliders to create an engaging experience. The sliders display musician profiles and past performances. The website is responsive, ensuring a seamless experience across devices.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/tribe",
 		"technologies": {
 			"preview": "JQuery, SCSS, Bootstrap",
-			"full": ""
+			"full": ["HTML", "SCSS", "jQuery", "Bootstrap", "adaptive layout"]
 		}
 	},
 	{
 		"title": "how-to-learn",
-		"img": "./assets/how-to-learn-min.webp",
+		"img": {"link": "./assets/how-to-learn-min.webp", "shift": 20},
 		"description": "The project provides users with access to various types of information aimed at enhancing learning effectiveness, including textual articles, infographics, video materials, and links to useful resources.",
 		"mainLink": "",
 		"githubLink": "https://github.com/VilsonKh/how-to-learn",
 		"technologies": {
-			"preview": "HTML, CSS",
-			"full": ""
+			"preview": "HTML, CSS, BEM",
+			"full": ["HTML", "CSS", "BEM"]
 		}
 	}
 ]

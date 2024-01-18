@@ -1,16 +1,15 @@
 import { useSwiper } from "swiper/react";
 
-const SwiperButtonNext = () => {
+const SwiperButtonPrev = () => {
 	const swiper = useSwiper();
 	const onButtonClick = () => {
-		console.log("click");
-		swiper.slideNext();
+		swiper.slidePrev();
 	};
 	return (
-		<button className="descriptionBar__arrow" onClick={onButtonClick}>
+		<button className="descriptionBar__arrowBack" onClick={onButtonClick}>
 			<img src="./assets/icon-arrow.svg" alt="" />
 		</button>
 	);
 };
 
-export default SwiperButtonNext;
+export default SwiperButtonPrev;

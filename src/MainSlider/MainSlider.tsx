@@ -5,21 +5,20 @@ import projectsConfig from "../projects-config.json";
 import "swiper/css";
 import "./MainSlider.scss";
 
-const MainSlider = ({ thumbsSwiper, setMainSwiper, setCurrentIndex }: { thumbsSwiper: any, setMainSwiper: any, setCurrentIndex: (value: any) => void }) => {
+const MainSlider = ({ thumbsSwiper, setMainSwiper, setCurrentIndex, isHide }: {isHide: boolean, thumbsSwiper: any; setMainSwiper: any; setCurrentIndex: (value: any) => void }) => {
 	const sliderParams = {
 		initialSlide: 1,
 		modules: [Thumbs, Controller],
-    onSwiper: setMainSwiper,
-		onSlideChange: (swiper: any)=> setCurrentIndex(swiper.activeIndex)
-
+		onSwiper: setMainSwiper,
+		onSlideChange: (swiper: any) => setCurrentIndex(swiper.activeIndex),
 	};
 
 	return (
-		<Swiper className="mainSlider" {...sliderParams}  controller={thumbsSwiper ? {control: thumbsSwiper} : undefined}>
+		<Swiper className="mainSlider" {...sliderParams} controller={thumbsSwiper ? { control: thumbsSwiper } : undefined}>
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
 					<SwiperSlide key={index}>
-						<img src={project.img} alt={project.title} />
+						<img className="mainSlider__img" src={project.img.link} alt={project.title} style={isHide ? {transform: "translate(0)"} : { transform: `translate(${project.img.shift}%)` }} />
 					</SwiperSlide>
 				);
 			})}

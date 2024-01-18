@@ -10,6 +10,7 @@
 		background: $navMenu-bg;
 		z-index: 100;
 		transform: rotate(-20deg);
+		transition: all .3s linear;
 
 		&::before {
 			content: "";
@@ -43,4 +44,11 @@
     z-index: 100;
     transform: rotate(20deg);
 	}
+
+
 }
+
+.navMenu__container.hide {
+	transform: translate(-50%) rotate(-20deg);
+}
+

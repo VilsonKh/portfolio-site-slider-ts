@@ -2,10 +2,12 @@ import "./DescriptionBar.scss";
 import projectsConfig from "../projects-config.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperButtonNext from "../SwiperButtonNext/SwiperButtonNext";
+import SwiperButtonPrev from "../SwiperButtonPrev/SwiperButtonPrev";
 
-const DescriptionBar = ({ slideIndex }: { slideIndex: any }) => {
+const DescriptionBar = ({ slideIndex, isHide}: { slideIndex: any, isHide: boolean }) => {
+  
 	return (
-		<div className="descriptionBar">
+		<div className={`descriptionBar${isHide ? " hide" : ''}`}>
 			{projectsConfig.map((project: any, index: number) => {
 				if (index === slideIndex) {
 					return (
@@ -16,9 +18,7 @@ const DescriptionBar = ({ slideIndex }: { slideIndex: any }) => {
 									<div className="descriptionBar__footer">
 										<div className="descriptionBar__technologiesContainer">
 											<p className="descriptionBar__technologies">{project.technologies.preview}</p>
-											<SwiperButtonNext>
-												<img src="./assets/icon-arrow.svg" alt="" />
-											</SwiperButtonNext>
+											<SwiperButtonNext />
 										</div>
 										<div className="descriptionBar__buttonGroup">
 											<a href={project.githubLink} className="descriptionBar__link">
@@ -30,7 +30,22 @@ const DescriptionBar = ({ slideIndex }: { slideIndex: any }) => {
 										</div>
 									</div>
 								</SwiperSlide>
-								<SwiperSlide>{project.technologies.full}</SwiperSlide>
+								<SwiperSlide>
+									<div className="descriptionBar__technologiesContainer">
+										<SwiperButtonPrev />
+
+										<div className="descriptionBar__technologiesGrid">
+											{project.technologies.full.map((tech: any) => {
+												return (
+													<div className="descriptionBar__techItem">
+														<p className="descriptionBar__techTitle">{tech.title}</p>
+                            <img className="descriptionBar__techImg" src={tech.img} alt="" />
+													</div>
+												);
+											})}
+										</div>
+									</div>
+								</SwiperSlide>
 							</Swiper>
 						</div>
 					);
