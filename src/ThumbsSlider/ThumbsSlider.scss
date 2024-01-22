@@ -2,7 +2,7 @@
 
 .thumbsSlider {
 	transform: rotate(20deg);
-	top: 15%;
+	top: 20%;
 	left: 15%;
 	width: 70%;
 	height: 80vh;
@@ -10,13 +10,59 @@
 	& .swiper-wrapper {
 		align-items: center;
 	}
+
+	&__thumb {
+		transform: skew(20deg);
+		overflow: hidden;
+		position: relative;
+		border: 2px solid #9f9f9f;
+		outline: 1px solid gray;
+		outline-offset: 5px;
+	}
+
+	& img {
+		transform-origin: top left;
+		transform: skew(-20deg) scale(1.2);
+		
+	}
+
 }
 
 .thumbsSlider .swiper-slide {
 	filter: grayscale(1);
 	transition: all 0.2s linear;
-	// max-width: 300px;
-	// max-height: 160px !important;
+	max-width: 300px;
+
+	&:first-child{
+		margin-top: 50px;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		border-bottom: 2px solid white;
+		border-right: 3px solid white;
+		width: 70px;
+		height: 40px;
+		top: 50%;
+		right: -15%;
+		z-index: 10000;
+		transform: skew(20deg);
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		border-top: 2px solid white;
+		border-left: 3px solid white;
+		width: 70px;
+		height: 40px;
+		top: -5%;
+		left: -15%;
+		transform: skew(20deg);
+	}
 }
 
 .thumbsSlider img {

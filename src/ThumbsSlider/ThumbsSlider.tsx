@@ -6,7 +6,7 @@ import "./ThumbsSlider.scss";
 const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => void; mainSwiper: any }) => {
 	const sliderParams = {
 		slidesPerView: 3,
-		spaceBetween: 50,
+		// spaceBetween: 50,
 		initialSlide: 1,
 		centeredSlides: true,
 		watchSlidesProgress: true,
@@ -32,7 +32,6 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 		if (currentIndex === 0) {
 			console.log("первый слайд");
 			document.querySelector("div[data-index='2'")?.classList.add("swiper-slide-after-next");
-
 		} else if (currentIndex === totalSlides) {
 			swiper.slides[currentIndex - 2].classList.add("swiper-slide-before-prev");
 		} else {
@@ -57,7 +56,9 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
 					<SwiperSlide data-index={index} key={index}>
-						<img src={project.img.link} alt={project.title} />
+						<div className="thumbsSlider__thumb">
+							<img src={project.img.link} alt={project.title} />
+						</div>
 					</SwiperSlide>
 				);
 			})}
