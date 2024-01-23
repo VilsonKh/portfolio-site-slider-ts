@@ -5,12 +5,22 @@
 		position: absolute;
 		top: -10%;
 		left: -10%;
-		width: 45%;
+		max-width: 800px;
+		width: 50%;
+		min-width: 500px;
 		height: 150%;
 		background: $navMenu-bg;
 		z-index: 100;
 		transform: rotate(-20deg);
-		transition: all .3s linear;
+		transition: all 0.3s linear;
+
+		@media screen and (max-width: 1500px) {
+			transform: rotate(-10deg);
+		}
+
+		// @media screen and (max-width: 1000px) {
+		// 	display: none;
+		// }
 
 		&::before {
 			content: "";
@@ -19,7 +29,7 @@
 			height: 150vh;
 			position: absolute;
 			top: 0;
-			left: 92%;
+			right: 20px;
 			box-shadow: $navMenu_wideLine-boxShadow;
 		}
 
@@ -41,14 +51,21 @@
 		font-size: 32px;
 		top: 13%;
 		left: 55%;
-    z-index: 100;
-    transform: rotate(20deg);
+		z-index: 100;
+		transform: rotate(20deg);
+
+		@media screen and (max-width: 1500px) {
+			transform: rotate(10deg);
+			top: 13%;
+			left: 48%;
+		}
 	}
-
-
 }
 
 .navMenu__container.hide {
 	transform: translate(-50%) rotate(-20deg);
-}
 
+	@media screen and (max-width: 1500px) {
+		transform: translate(-50%) rotate(-10deg);
+	}
+}

@@ -4,21 +4,26 @@ import MainSlider from "./MainSlider/MainSlider";
 import NavMenu from "./NavMenu/NavMenu";
 import DescriptionBar from "./DescriptionBar/DescriptionBar";
 import HideBarButton from "./HideBarButton/HideBarButton";
+import BurgerButton from "./BurgerButton/BurgerButton";
+import MobileThumbs from "./MobileThumbs/MobileThumbs";
 function App() {
-
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
-  const [mainSwiper, setMainSwiper] = useState(null)
-  const [currentIndex, setCurrentIndex] = useState(1)
-	const [isHide, setIsHide] = useState(false)
-
+	const [thumbsSwiper, setThumbsSwiper] = useState(null);
+	const [mainSwiper, setMainSwiper] = useState(null);
+	const [currentIndex, setCurrentIndex] = useState(1);
+	const [isHide, setIsHide] = useState(false);
 
 	return (
 		<div className="App">
 			<Logo />
-			<HideBarButton isHide={isHide} setIsHide={setIsHide}/>
-			<MainSlider isHide={isHide}  setCurrentIndex={setCurrentIndex}  thumbsSwiper={thumbsSwiper} setMainSwiper={setMainSwiper}/>
-      <NavMenu isHide={isHide} mainSwiper={mainSwiper} setThumbsSwiper={setThumbsSwiper}/>
-			<DescriptionBar isHide={isHide} slideIndex={currentIndex}/>
+			<MainSlider isHide={isHide} setCurrentIndex={setCurrentIndex} thumbsSwiper={thumbsSwiper} setMainSwiper={setMainSwiper} />
+			{window.screen.width > 1000 ? (
+				<>
+					<HideBarButton isHide={isHide} setIsHide={setIsHide} />
+					<NavMenu isHide={isHide} mainSwiper={mainSwiper} setThumbsSwiper={setThumbsSwiper} />
+					<DescriptionBar isHide={isHide} slideIndex={currentIndex} />
+				</>
+			) : <MobileThumbs/>}
+			<BurgerButton />
 		</div>
 	);
 }

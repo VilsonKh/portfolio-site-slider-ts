@@ -12,7 +12,8 @@
   box-shadow: 0px -12px 22px 0px rgba(0,0,0,0.5);
 
   &__container {
-    width: 50%;
+    // width: 56%;
+    width: calc(46% + 150 * ((100vw - 1200px) / (1920 - 1200)));
     height: 100%;
     margin-left: auto;
     position: relative;
@@ -24,7 +25,22 @@
     color: white;
     font-size: 24px;
     max-height: 150px;
-    overflow: scroll;
+    overflow: auto;
+    scrollbar-color: $orange-color transparent;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+
+  &__text::-webkit-scrollbar {
+     background: rgb(22, 23, 22);
+     width: 8px;
+  }
+
+  &__text::-webkit-scrollbar-thumb {
+    background: $orange-color;
+    -webkit-border-radius: 1ex;
   }
 
   &__buttonGroup {
@@ -50,7 +66,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 15px;
     color: white;
   }
 
@@ -68,6 +83,10 @@
   &__footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 
   &__technologiesFull {
@@ -95,6 +114,9 @@
     width: 50px;
   }
 
+  & .swiper-slide {
+    min-height: 220px;
+  }
 }
 
 .opacity-anim {

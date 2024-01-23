@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.burgerButton {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  &__element {
+    width: 70px;
+    height: 14px;
+    background: $orange-color;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+}
