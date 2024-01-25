@@ -50,7 +50,7 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 			className="thumbsSlider"
 			{...sliderParams}
 			direction="vertical"
-			controller={mainSwiper ? { control: mainSwiper } : undefined}
+			controller={ {control: mainSwiper} }
 			onActiveIndexChange={(swiper: any) => setBeforePrevAfterNext(swiper)}
 		>
 			{projectsConfig.map((project, index): JSX.Element => {

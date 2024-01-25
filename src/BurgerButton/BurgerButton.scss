@@ -11,6 +11,10 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
 
   &__element {
     width: 70px;
