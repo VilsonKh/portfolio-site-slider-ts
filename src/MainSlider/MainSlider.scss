@@ -1,10 +1,27 @@
 .mainSlider {
 	height: 100vh;
+	overflow: visible;
+	
 
 	&__img {
-		transition: all 0.3s linear;
+		//мешает нормальному drag - тормозит его
+		// transition: all 0.3s linear;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		touch-action: none;
+
+		@media screen and (max-width: 1000px) {
+			object-fit: none;
+			width: auto;
+			height: auto;
+			max-width: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.mainSlider .swiper-slide {
+		overflow: scroll;
 	}
 }
