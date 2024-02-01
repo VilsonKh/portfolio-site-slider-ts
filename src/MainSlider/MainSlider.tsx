@@ -58,12 +58,29 @@ const MainSlider = ({
 		};
 	}, []);
 
-	const bind = useGesture({
-		onDrag: ({ offset: [x, y] }) => {
-			api.start({ x, y });
+	const bind = useGesture(
+		{
+			onDrag: ({ pinching, cancel, offset: [x, y] }) => {
+				if (pinching) return cancel();
+				api.start({ x, y });
+			},
+			onPinch: ({ offset: [d, a] }) => api.start({ zoom: d, rotateZ: a }),
+			// onPinch: (state) => console.log(state),
 		},
-		onPinch: ({ offset: [d, a] }) => api({ zoom: d , rotateZ: a }),
-	});
+		{
+			drag: {
+				target: ref,
+				bounds: {
+					left: window.screen.width - 1920,
+					top: window.screen.height - 1080,
+					right: 0,
+					bottom: 0,
+				},
+				rubberband: true,
+			},
+			pinch: { target: ref, scaleBounds: { min: 0.1, max: 1.2 }, rubberband: true },
+		}
+	);
 
 	return (
 		<Swiper
