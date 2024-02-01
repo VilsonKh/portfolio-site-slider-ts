@@ -3,9 +3,8 @@ import { Controller, Thumbs } from "swiper/modules";
 import projectsConfig from "../projects-config.json";
 import "swiper/css";
 import "./MainSlider.scss";
-
+import { useGesture } from "@use-gesture/react";
 import { useSpring, animated } from "@react-spring/web";
-import { createUseGesture, dragAction, pinchAction, useDrag } from "@use-gesture/react";
 import { useEffect, useRef } from "react";
 
 const MainSlider = ({
@@ -33,7 +32,19 @@ const MainSlider = ({
 		simulateTouch: false,
 	};
 
-	const useGesture = createUseGesture([dragAction, pinchAction]);
+	// const [style, api] = useSpring(() => ({ x: 0, y: 0 }));
+	const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(() => ({
+		rotateX: 0,
+		rotateY: 0,
+		rotateZ: 0,
+		scale: 1,
+		zoom: 0,
+		x: 0,
+		y: 0,
+		// config: { mass: 5, tension: 350, friction: 40 },
+	}));
+
+	const ref = useRef<HTMLImageElement>(null);
 
 	useEffect(() => {
 		const handler = (e: Event) => e.preventDefault();
@@ -45,49 +56,13 @@ const MainSlider = ({
 			document.removeEventListener("gesturechange", handler);
 			document.removeEventListener("gestureend", handler);
 		};
-	});
+	}, []);
 
-	const [{ x, y }, api] = useSpring(() => ({
-		x: 0,
-		y: 0,
-		scale: 1,
-		rotateZ: 0,
-	}));
-	const ref = useRef<HTMLImageElement>(null);
-
-	// useGesture(
-	//   {
-	//     // onHover: ({ active, event }) => console.log('hover', event, active),
-	//     // onMove: ({ event }) => console.log('move', event),
-	//     onDrag: ({ pinching, cancel, offset: [x, y], ...rest }) => {
-	//       if (pinching) return cancel()
-	// 			console.log("драг")
-	//       api.start({ x, y })
-	//     },
-	//     onPinch: ({ origin: [ox, oy], first, movement: [ms], offset: [s, a], memo }) => {
-	//       if (first) {
-	//         const { width, height, x, y } = ref.current!.getBoundingClientRect()
-	//         const tx = ox - (x + width / 2)
-	//         const ty = oy - (y + height / 2)
-	//         memo = [style.x.get(), style.y.get(), tx, ty]
-	//       }
-
-	//       const x = memo[0] - (ms - 1) * memo[2]
-	//       const y = memo[1] - (ms - 1) * memo[3]
-	//       api.start({ scale: s, rotateZ: a, x, y })
-	//       return memo
-	//     },
-	//   },
-	//   {
-	//     target: ref,
-	//     drag: { from: () => [style.x.get(), style.y.get()] },
-	//     pinch: { scaleBounds: { min: 0.5, max: 2 }, rubberband: true },
-	//   }
-	// )
-
-	const bind = useDrag(({ offset: [x, y] }) => {
-		api.start({ x, y });
-		console.log("drag");
+	const bind = useGesture({
+		onDrag: ({ offset: [x, y] }) => {
+			api.start({ x, y });
+		},
+		onPinch: ({ offset: [d, a] }) => api({ zoom: d , rotateZ: a }),
 	});
 
 	return (
@@ -104,7 +79,7 @@ const MainSlider = ({
 							src={project.img.link}
 							alt={project.title}
 							// style={isHide || windowWidth < 1000 ? { transform: "translate(0)" } : { transform: `translate(${project.img.shift}%)` }}
-							style={{ x, y }}
+							style={{ x, y, scale, zoom, rotateX, rotateY, rotateZ }}
 							ref={ref}
 							{...bind()}
 						/>

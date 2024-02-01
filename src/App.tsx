@@ -28,7 +28,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Logo />
+			{/* <Logo /> */}
 			<MainSlider
 				windowWidth={windowWidth}
 				isHide={isHide}
