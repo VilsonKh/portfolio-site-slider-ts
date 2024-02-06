@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller, Thumbs } from "swiper/modules";
+import { Controller } from "swiper/modules";
 import projectsConfig from "../projects-config.json";
 import "swiper/css";
 import "./MainSlider.scss";
@@ -11,9 +11,8 @@ const MainSlider = ({
 	thumbsSwiper,
 	setMainSwiper,
 	setCurrentIndex,
-	isHide,
 	windowWidth,
-	mobileThumbsSwiper,
+	currentIndex,
 }: {
 	isHide: boolean;
 	thumbsSwiper: any;
@@ -21,18 +20,22 @@ const MainSlider = ({
 	windowWidth: number;
 	setCurrentIndex: (value: any) => void;
 	mobileThumbsSwiper: any;
+	currentIndex: number;
 }) => {
 	const sliderParams = {
 		initialSlide: 1,
-		modules: [Thumbs, Controller],
+		modules: [Controller],
 		onSwiper: setMainSwiper,
-		onSlideChange: (swiper: any) => setCurrentIndex(swiper.activeIndex),
+		onSlideChange: (swiper: any) => {
+			setCurrentIndex(swiper.activeIndex);
+
+			console.log("slide change");
+		},
 		allowSlideNext: windowWidth < 1000 ? false : true,
 		allowSlidePrev: windowWidth < 1000 ? false : true,
 		simulateTouch: false,
 	};
 
-	// const [style, api] = useSpring(() => ({ x: 0, y: 0 }));
 	const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(() => ({
 		rotateX: 0,
 		rotateY: 0,
@@ -44,6 +47,7 @@ const MainSlider = ({
 		// config: { mass: 5, tension: 350, friction: 40 },
 	}));
 
+	console.log(api);
 	const ref = useRef<HTMLImageElement>(null);
 
 	useEffect(() => {
@@ -61,32 +65,29 @@ const MainSlider = ({
 	const bind = useGesture(
 		{
 			onDrag: ({ pinching, cancel, offset: [x, y] }) => {
-				if (pinching) return cancel();
 				api.start({ x, y });
 			},
 			onPinch: ({ offset: [d, a] }) => api.start({ zoom: d, rotateZ: a }),
-			// onPinch: (state) => console.log(state),
 		},
 		{
 			drag: {
 				target: ref,
-				bounds: {
-					left: window.screen.width - 1920,
-					top: window.screen.height - 1080,
-					right: 0,
-					bottom: 0,
-				},
+				// bounds: {
+				// 	left: window.screen.width - 1920,
+				// 	top: window.screen.height - 1080,
+				// 	right: 0,
+				// 	bottom: 0,
+				// },
 				rubberband: true,
 			},
-			pinch: { target: ref, scaleBounds: { min: 0.1, max: 1.2 }, rubberband: true },
+			pinch: { target: ref, scaleBounds: { min: 0.1, max: 1.5 }, rubberband: true },
 		}
 	);
-
 	return (
 		<Swiper
 			className="mainSlider"
 			{...sliderParams}
-			controller={thumbsSwiper ? { control: thumbsSwiper } : undefined}
+			controller={{ control: thumbsSwiper }}
 		>
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (

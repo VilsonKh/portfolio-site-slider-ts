@@ -1,12 +1,12 @@
 @import "../variables.scss";
 
 .thumbsSlider {
-	transform: rotate(20deg);
+	// transform: rotate(20deg);
 	top: 20%;
 	left: 15%;
 	width: 70%;
 	height: 80vh;
-
+	overflow: visible;
 	@media screen and (max-width: 1500px) {
 		transform: rotate(10deg);
 		top: 16%;
@@ -24,6 +24,11 @@
 		border: 2px solid #9f9f9f;
 		outline: 1px solid gray;
 		outline-offset: 5px;
+
+		& img {
+			pointer-events: none;
+			user-select: none;
+		}
 	}
 
 	& img {
@@ -36,7 +41,8 @@
 	filter: grayscale(1);
 	transition: all 0.2s linear;
 	width: min(50%, 300px);
-
+	transform: rotate(20deg);
+	opacity: 0;
 	&:first-child {
 		margin-top: 50px;
 	}
@@ -49,11 +55,14 @@
 		border-right: 3px solid white;
 		width: 70px;
 		height: 40px;
-		top: calc(93px + 43 * ((100vw - 1200px) / (1920 - 1200)));
-		// top: 136px;
+		top: calc(123px + 13 * ((100vw - 1500px) / (1920 - 1500)));
 		right: calc(-23px - 24 * ((100vw - 768px) / (1920 - 768)));
 		z-index: 10000;
 		transform: skew(20deg);
+
+		@media screen and (min-width: 1000px) and (max-width: 1500px) {
+			top: calc(72px + 51 * ((100vw - 1000px) / (1500 - 1000)));
+		}
 
 		@media screen and (min-width: 1920px) {
 			top: 136px;
@@ -82,36 +91,37 @@
 
 .thumbsSlider .swiper-slide-active {
 	filter: grayscale(0);
+	opacity: 1;
 }
 
 .thumbsSlider .swiper-slide-prev {
-	transform: translateX(-1% * $thumbsSlider_slide-shift);
-
+	transform: translateX(-1% * $thumbsSlider_slide-shift) rotate(20deg);
+	opacity: 1;
 	@media screen and (max-width: 1500px) {
-		transform: translateX(-1% * $thumbsSlider_slide-shiftTab);
+		transform: translateX(-1% * $thumbsSlider_slide-shiftTab) rotate(20deg);
 	}
 }
 
 .thumbsSlider .swiper-slide-next {
-	transform: translateX(1% * $thumbsSlider_slide-shift);
-
+	transform: translateX(1% * $thumbsSlider_slide-shift) rotate(20deg);
+	opacity: 1;
 	@media screen and (max-width: 1500px) {
-		transform: translateX(1% * $thumbsSlider_slide-shiftTab);
+		transform: translateX(1% * $thumbsSlider_slide-shiftTab) rotate(20deg);
 	}
 }
 
 .thumbsSlider .swiper-slide-before-prev {
-	transform: translateX(2 * $thumbsSlider_slide-shift * (-1%));
-
+	transform: translateX(2 * $thumbsSlider_slide-shift * (-1%)) rotate(20deg);
+	opacity: 0;
 	@media screen and (max-width: 1500px) {
-		transform: translateX(2 * $thumbsSlider_slide-shiftTab * (-1%));
+		transform: translateX(2 * $thumbsSlider_slide-shiftTab * (-1%)) rotate(20deg);
 	}
 }
 
 .thumbsSlider .swiper-slide-after-next {
-	transform: translateX(2 * $thumbsSlider_slide-shift * 1%);
-
+	transform: translateX(2 * $thumbsSlider_slide-shift * 1%) rotate(20deg);
+	opacity: 0;
 	@media screen and (max-width: 1500px) {
-		transform: translateX(2 * $thumbsSlider_slide-shiftTab * 1%);
+		transform: translateX(2 * $thumbsSlider_slide-shiftTab * 1%) rotate(20deg);
 	}
 }

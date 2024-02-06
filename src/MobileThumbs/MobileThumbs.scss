@@ -3,12 +3,13 @@
 .mobileThumbs {
 	position: absolute;
 	bottom: 0;
-	z-index: 1000;
 	width: 100%;
-	height: 45%;
+	height: 40%;
 	background: $mobileThumbs-bg;
 	// background: white;
 	// overflow: hidden;
+	z-index: 10;
+	transition: all .3s linear;
 
 	&__container {
 		position: relative;
@@ -17,34 +18,100 @@
 		display: flex;
 		align-items: center;
 	}
+
+	&.hide {
+		transform: translateY(90%);
+	}
+
+	&__img {
+		transform: skew(-20deg) scale(1.2);
+	}
+
+	&__swiper {
+		height: 170px;
+	}
+
+	& .swiper-slide {
+		display: flex;
+		align-items: center;
+		transform: rotate(90deg);
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			border-bottom: 2px solid white;
+			border-right: 3px solid white;
+			width: 70px;
+			height: 40px;
+			top: 90px;
+			right: -23px;
+			z-index: 10000;
+			transform: skew(20deg);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			border-top: 2px solid white;
+			border-left: 3px solid white;
+			width: 70px;
+			height: 40px;
+			top: 40px;
+			left: -20px;
+			transform: skew(20deg);
+		}
+	}
+
+	&__slide-container {
+		transform: skew(20deg);
+		overflow: hidden;
+		position: relative;
+		border: 2px solid #9f9f9f;
+		outline: 1px solid gray;
+		outline-offset: 5px;
+	}
+
+	&__arrowDown {
+		position: absolute;
+		top: 85%;
+		left: 50%;
+		width: 50px;
+		height: 50px;
+		transform: translateX(-50%);
+		z-index: 10;
+	}
+
+
 }
 
 .topTriangle {
 	width: 100%;
 	height: 100px;
 	background: transparent;
-  opacity: .9;
+	opacity: 0.9;
 	position: absolute;
 	filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.75));
 	bottom: 100%;
 	z-index: 1000;
 
-  @media screen and (max-width: 500px) {
-    height: 50px;
-  }
+	@media screen and (max-width: 500px) {
+		height: 50px;
+	}
 
 	&::before {
 		position: absolute;
 		clip-path: polygon(0 0, 0% 100%, 100% 100%);
 		background: $orange-color;
 		content: "";
-		width: 110%;
+		width: 100%;
 		height: 100px;
-    z-index: 10;
+		z-index: 10;
 
-    @media screen and (max-width: 500px) {
-      height: 50px;
-    }   
+		@media screen and (max-width: 500px) {
+			height: 50px;
+		}
 	}
 }
 
@@ -55,22 +122,22 @@
 	position: absolute;
 	filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.75));
 
-  @media screen and (max-width: 500px) {
-    height: 50px;
-  }   
+	@media screen and (max-width: 500px) {
+		height: 50px;
+	}
 
 	&::before {
 		position: absolute;
 		clip-path: polygon(0 0, 0% 100%, 100% 0);
 		background: $orange-color;
 		content: "";
-		width: 110%;
+		width: 100%;
 		height: 100px;
 		z-index: 10;
 		inset: 0;
 
-    @media screen and (max-width: 500px) {
-      height: 50px;
-    }
+		@media screen and (max-width: 500px) {
+			height: 50px;
+		}
 	}
 }

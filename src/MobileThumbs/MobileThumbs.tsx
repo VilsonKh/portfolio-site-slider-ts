@@ -2,10 +2,20 @@ import "./MobileThumbs.scss";
 import projectsConfig from "../projects-config.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller } from "swiper/modules";
+import { useState } from "react";
 
-const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper }: { mainSwiper: any; setMobileThumbsSwiper: (value: any) => void }) => {
+interface IMobileThumbs {
+	mainSwiper: any;
+	setMobileThumbsSwiper: (value: any) => void;
+	isMobileThumbHide: boolean;
+	setIsMobileThumbHide: (value: any) => void
+}
+
+const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide, isMobileThumbHide }: IMobileThumbs) => {
+
+
 	return (
-		<div className="mobileThumbs">
+		<div className={`mobileThumbs ${isMobileThumbHide ? "hide" : ''}`}>
 			<div className="topTriangle"></div>
 			<div className="bottomTriangle"></div>
 			<div className="mobileThumbs__container">
@@ -15,7 +25,7 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper }: { mainSwiper: any; 
 					initialSlide={1}
 					onSwiper={(swiper: any) => setMobileThumbsSwiper(swiper)}
 					modules={[Controller]}
-					controller={mainSwiper ? { control: mainSwiper } : undefined}
+					controller={{ control: mainSwiper }}
 					centeredSlides={true}
 				>
 					{projectsConfig.map((project, index): JSX.Element => {
@@ -24,10 +34,11 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper }: { mainSwiper: any; 
 								data-index={index}
 								key={index}
 							>
-								<div>
+								<div className="mobileThumbs__slide-container">
 									<img
 										src={project.img.link}
 										alt={project.title}
+										className="mobileThumbs__img"
 									/>
 								</div>
 							</SwiperSlide>
@@ -35,6 +46,13 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper }: { mainSwiper: any; 
 					})}
 				</Swiper>
 			</div>
+			<button className="mobileThumbs__arrowDown" onClick={() => setIsMobileThumbHide(!isMobileThumbHide)}>
+				<img
+					src="./assets/arrow-down-icon.svg"
+					alt="arrow-down"
+				/>
+			</button>
+
 		</div>
 	);
 };

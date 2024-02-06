@@ -13,12 +13,16 @@
 
   &__container {
     // width: 56%;
-    width: calc(46% + 150 * ((100vw - 1200px) / (1920 - 1200)));
+    width: calc(46% + 150 * ((100vw - 1500px) / (1920 - 1500)));
     height: 100%;
     margin-left: auto;
     position: relative;
     transition: all .3s linear;
     padding: 15px 15px 15px 0;
+
+    @media screen and (min-width: 1000px) and (max-width: 1500px) {
+      width: calc(48% - 10 * ((100vw - 1000px) / (1500 - 1000)));
+    }
   }
 
   &__text {

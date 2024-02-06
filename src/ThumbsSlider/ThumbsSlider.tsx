@@ -1,18 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import projectsConfig from "../projects-config.json";
 import { Controller } from "swiper/modules";
-import "./ThumbsSlider.scss";
+import "./ThumbsSlider.scss"; 
 
 const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => void; mainSwiper: any }) => {
 	const sliderParams = {
 		slidesPerView: 3,
-		// spaceBetween: 50,
+		spaceBetween: 50,
 		initialSlide: 1,
 		centeredSlides: true,
 		watchSlidesProgress: true,
 		onSwiper: setThumbsSwiper,
 		modules: [Controller],
 		freeMode: false,
+		followFinger: false,
 	};
 
 	function setBeforePrevAfterNext(swiper: any) {
@@ -57,7 +58,7 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 				return (
 					<SwiperSlide data-index={index} key={index}>
 						<div className="thumbsSlider__thumb">
-							<img src={project.img.link} alt={project.title} />
+							<img className="thumbsSlider__img" src={project.img.link} alt={project.title} />
 						</div>
 					</SwiperSlide>
 				);
