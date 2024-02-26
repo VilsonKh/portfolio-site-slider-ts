@@ -8,14 +8,12 @@ interface IMobileThumbs {
 	mainSwiper: any;
 	setMobileThumbsSwiper: (value: any) => void;
 	isMobileThumbHide: boolean;
-	setIsMobileThumbHide: (value: any) => void
+	setIsMobileThumbHide: (value: any) => void;
 }
 
 const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide, isMobileThumbHide }: IMobileThumbs) => {
-
-
 	return (
-		<div className={`mobileThumbs ${isMobileThumbHide ? "hide" : ''}`}>
+		<div className={`mobileThumbs ${isMobileThumbHide ? "hide" : ""}`}>
 			<div className="topTriangle"></div>
 			<div className="bottomTriangle"></div>
 			<div className="mobileThumbs__container">
@@ -46,13 +44,15 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 					})}
 				</Swiper>
 			</div>
-			<button className="mobileThumbs__arrowDown" onClick={() => setIsMobileThumbHide(!isMobileThumbHide)}>
+			<button
+				className="mobileThumbs__arrowDown"
+				onClick={() => setIsMobileThumbHide(!isMobileThumbHide)}
+			>
 				<img
 					src="./assets/arrow-down-icon.svg"
 					alt="arrow-down"
 				/>
 			</button>
-
 		</div>
 	);
 };

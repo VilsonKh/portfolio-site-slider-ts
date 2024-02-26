@@ -1,7 +1,6 @@
 .mainSlider {
 	height: 100vh;
 	overflow: visible;
-	
 
 	&__img {
 		//мешает нормальному drag - тормозит его
@@ -10,8 +9,11 @@
 		height: 100%;
 		object-fit: cover;
 		touch-action: none;
-		pointer-events: none;
-		user-select: none;
+
+		@media screen and (min-width: 1000px) {
+			pointer-events: none;
+			user-select: none;
+		}
 
 		@media screen and (max-width: 1000px) {
 			object-fit: none;

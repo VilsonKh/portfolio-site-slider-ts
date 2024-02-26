@@ -14,6 +14,7 @@ const ThumbsSlider = ({ setThumbsSwiper, mainSwiper }: { setThumbsSwiper: () => 
 		modules: [Controller],
 		freeMode: false,
 		followFinger: false,
+		slideToClickedSlide: true
 	};
 
 	function setBeforePrevAfterNext(swiper: any) {

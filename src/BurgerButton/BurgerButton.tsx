@@ -1,13 +1,13 @@
 import "./BurgerButton.scss";
 
-const BurgerButton = () => {
-  return (
-    <button className="burgerButton">
-      <div className="burgerButton__element"></div>
-      <div className="burgerButton__element"></div>
-      <div className="burgerButton__element"></div>
-    </button>
-  )
-}
+const BurgerButton = ({ setIsDescriptionPopup }: { setIsDescriptionPopup: (value: boolean) => void }) => {
+	return (
+		<button className="burgerButton" onClick={() => setIsDescriptionPopup(true)}>
+			<div className="burgerButton__element"></div>
+			<div className="burgerButton__element"></div>
+			<div className="burgerButton__element"></div>
+		</button>
+	);
+};
 
-export default BurgerButton
+export default BurgerButton;

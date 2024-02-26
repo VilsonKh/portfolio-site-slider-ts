@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo/Logo";
 import MainSlider from "./MainSlider/MainSlider";
-import NavMenu from "./NavMenu/NavMenu";
-import DescriptionBar from "./DescriptionBar/DescriptionBar";
-import HideBarButton from "./HideBarButton/HideBarButton";
-import BurgerButton from "./BurgerButton/BurgerButton";
-import MobileThumbs from "./MobileThumbs/MobileThumbs";
-
 import "./App.scss";
-import MobileArrowDown from "./MobileArrowDown/MobileArrowDown";
 import DesktopLayout from "./DesktopLayout/DesktopLayout";
 import MobileLayout from "./MobileLayout/MobileLayout";
 
@@ -56,6 +49,7 @@ function App() {
 		setMobileThumbsSwiper: setMobileThumbsSwiper,
 		setIsMobileThumbHide: setIsMobileThumbHide,
 		isMobileThumbHide: isMobileThumbHide,
+		currentIndex: currentIndex
 	};
 
 	return (
@@ -63,7 +57,6 @@ function App() {
 			<Logo />
 			<MainSlider {...mainSliderProps} />
 			{windowWidth > 1000 ? <DesktopLayout {...desktopLayoutProps} /> : <MobileLayout {...mobileLayoutProps} />}
-			<BurgerButton />
 		</div>
 	);
 }
