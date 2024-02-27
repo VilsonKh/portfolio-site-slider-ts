@@ -11,6 +11,7 @@ const MainSlider = ({
 	setCurrentIndex,
 	windowWidth,
 	currentIndex,
+	isHide,
 }: {
 	isHide: boolean;
 	thumbsSwiper: any;
@@ -29,7 +30,7 @@ const MainSlider = ({
 		},
 		allowSlideNext: windowWidth < 1000 ? false : true,
 		allowSlidePrev: windowWidth < 1000 ? false : true,
-		simulateTouch: false,
+		simulateTouch: true,
 	};
 
 	return (
@@ -41,12 +42,14 @@ const MainSlider = ({
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
 					<SwiperSlide key={index}>
-						<GestureParams>
+						<GestureParams windowWidth={windowWidth}>
 							<img
 								className="mainSlider__img"
 								src={project.img.link}
 								alt={project.title}
-								// style={isHide || windowWidth < 1000 ? { transform: "translate(0)" } : { transform: `translate(${project.img.shift}%)` }}
+								style={
+									isHide || windowWidth < 1000 ? { transform: "translate(0)" } : { transform: `translate(${project.img.shift}%)` }
+								}
 							/>
 						</GestureParams>
 					</SwiperSlide>

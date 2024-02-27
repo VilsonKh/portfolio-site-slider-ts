@@ -9,11 +9,11 @@
 	// background: white;
 	// overflow: hidden;
 	z-index: 10;
-	transition: all .3s linear;
+	transition: all 0.3s linear;
 
 	&__container {
 		position: relative;
-		padding: 50px;
+		padding: 30px;
 		height: 80%;
 		display: flex;
 		align-items: center;
@@ -28,39 +28,47 @@
 	}
 
 	&__swiper {
-		height: 170px;
+		height: 100%;
 	}
 
 	& .swiper-slide {
 		display: flex;
 		align-items: center;
 		transform: rotate(90deg);
+		justify-content: center;
+	}
 
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			border-bottom: 2px solid white;
-			border-right: 3px solid white;
-			width: 70px;
-			height: 40px;
-			top: 90px;
-			right: -23px;
-			z-index: 10000;
-			transform: skew(20deg);
-		}
+	&__slide-wrapper {
+		// выровнять бордеры от 390 до 1000 px
+				@media screen and (min-width: 390px) {
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				border-bottom: 2px solid white;
+				border-right: 3px solid white;
+				width: 70px;
+				height: 40px;
+				// top: 90px;
+				top: 139px;
+				right: -23px;
+				z-index: 10000;
+				transform: skew(20deg);
+			}
 
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			border-top: 2px solid white;
-			border-left: 3px solid white;
-			width: 70px;
-			height: 40px;
-			top: 40px;
-			left: -20px;
-			transform: skew(20deg);
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				border-top: 2px solid white;
+				border-left: 3px solid white;
+				width: 70px;
+				height: 40px;
+				// top: 40px;
+				top: -20px;
+				left: -20px;
+				transform: skew(20deg);
+			}
 		}
 	}
 
@@ -71,6 +79,7 @@
 		border: 2px solid #9f9f9f;
 		outline: 1px solid gray;
 		outline-offset: 5px;
+		max-width: 120px;
 	}
 
 	&__arrowDown {
@@ -82,8 +91,6 @@
 		transform: translateX(-50%);
 		z-index: 10;
 	}
-
-
 }
 
 .topTriangle {
@@ -96,7 +103,11 @@
 	bottom: 100%;
 	z-index: 1000;
 
-	@media screen and (max-width: 500px) {
+	@media screen and (min-width: 750px) and (max-width: 1000px) {
+		height: 75px;
+	}
+
+	@media screen and (max-width: 750px) {
 		height: 50px;
 	}
 
@@ -109,7 +120,11 @@
 		height: 100px;
 		z-index: 10;
 
-		@media screen and (max-width: 500px) {
+		@media screen and (min-width: 750px) and (max-width: 1000px) {
+			height: 75px;
+		}
+
+		@media screen and (max-width: 750px) {
 			height: 50px;
 		}
 	}
@@ -122,8 +137,12 @@
 	position: absolute;
 	filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.75));
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 750px) {
 		height: 50px;
+	}
+
+	@media screen and (min-width: 750px) and (max-width: 1000px) {
+		height: 75px;
 	}
 
 	&::before {
@@ -136,8 +155,12 @@
 		z-index: 10;
 		inset: 0;
 
-		@media screen and (max-width: 500px) {
+		@media screen and (max-width: 750px) {
 			height: 50px;
+		}
+
+		@media screen and (min-width: 750px) and (max-width: 1000px) {
+			height: 75px;
 		}
 	}
 }

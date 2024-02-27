@@ -2,9 +2,9 @@ import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
 import React, { useEffect, useRef } from 'react'
 
-const GestureParams = ({children}: {children: JSX.Element}) => {
+const GestureParams = ({children, windowWidth}: {children: JSX.Element, windowWidth: number}) => {
 
-  const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(() => ({
+  const [{ x, y, rotateX, rotateY, zoom, scale }, api] = useSpring(() => ({
 		rotateX: 0,
 		rotateY: 0,
 		rotateZ: 0,
@@ -15,7 +15,6 @@ const GestureParams = ({children}: {children: JSX.Element}) => {
 		config: { mass: 1, tension: 450, friction: 40 },
 	}));
 
-	console.log(api);
 	const ref = useRef<HTMLImageElement>(null);
 
 	useEffect(() => {
@@ -30,7 +29,9 @@ const GestureParams = ({children}: {children: JSX.Element}) => {
 		};
 	}, []);
 
-	const bind = useGesture(
+
+
+	let bind = useGesture(
 		{
 			onDrag: ({ offset: [x, y] }) => {
 				api.start({ x, y });
@@ -51,8 +52,13 @@ const GestureParams = ({children}: {children: JSX.Element}) => {
 			pinch: { target: ref, scaleBounds: { min: 0.1, max: 1.5 }, rubberband: true },
 		}
 	);
+
+	if (windowWidth > 1000) {
+		api.stop()
+
+	}
   return (
-    <animated.div style={{x, y, rotateX, rotateY, zoom, scale}} {...bind()}>{children}</animated.div>
+    <animated.div style={windowWidth < 1000 ? {x, y, rotateX, rotateY, zoom, scale} : undefined} {...bind()}>{children}</animated.div>
   )
 }
 

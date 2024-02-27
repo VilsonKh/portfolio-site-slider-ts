@@ -32,13 +32,15 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 								data-index={index}
 								key={index}
 							>
-								<div className="mobileThumbs__slide-container">
-									<img
-										src={project.img.link}
-										alt={project.title}
-										className="mobileThumbs__img"
-									/>
-								</div>
+						<div className="mobileThumbs__slide-wrapper">
+									<div className="mobileThumbs__slide-container">
+										<img
+											src={project.img.link}
+											alt={project.title}
+											className="mobileThumbs__img"
+										/>
+									</div>
+						</div>
 							</SwiperSlide>
 						);
 					})}

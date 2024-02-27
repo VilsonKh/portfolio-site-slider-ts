@@ -1,9 +1,10 @@
 import "./MobileDescriptionPopup.scss";
 import projectsConfig from "../projects-config.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
 import SwiperButtonNext from "../SwiperButtonNext/SwiperButtonNext";
 import SwiperButtonPrev from "../SwiperButtonPrev/SwiperButtonPrev";
+
+import { useRef, useState } from "react";
 
 const MobileDescriptionPopup = ({
 	setIsDescriptionPopup,
@@ -12,12 +13,30 @@ const MobileDescriptionPopup = ({
 	setIsDescriptionPopup: (value: boolean) => void;
 	currentIndex: number;
 }) => {
+	function addAnimation() {
+		const animatedElements = document.querySelectorAll(".mobileDescriptionPopup__techContainer");
+		console.log(animatedElements)
+		animatedElements.forEach((elem, i) => {
+			setTimeout(() => {
+				elem.classList.add("appearence");
+			}, 200 + i * 100);
+		});
+	}
+
+	function removeAnimation() {
+		const animatedElements = document.querySelectorAll(".mobileDescriptionPopup__techContainer");
+		animatedElements.forEach((elem) => {
+			elem.classList.remove("appearence");
+		});
+	}
+
 	return (
 		<div className="mobileDescriptionPopup">
 			<div
 				className="mobileDescriptionPopup__close"
 				onClick={() => {
 					setIsDescriptionPopup(false);
+					removeAnimation()
 				}}
 			></div>
 			<Swiper>
@@ -56,19 +75,22 @@ const MobileDescriptionPopup = ({
 							return undefined;
 						})}
 					</div>
-					<div className="mobileDescriptionPopup__arrowNext">
+					<div
+						className="mobileDescriptionPopup__arrowNext"
+						onClick={addAnimation}
+					>
 						<SwiperButtonNext />
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
-					{/* НЕ РЕНДЕРИТСЯ ПОСЛЕ ЭТОЙ СТРОЧКИ */}
 					<div className="mobileDescriptionPopup__gridLayout">
 						{projectsConfig.map((project, i) => {
 							if (i === currentIndex) {
-								project.technologies.full.map((tech: any) => {
+								return project.technologies.full.map((tech: any, i) => {
 									return (
-										<div className="mobileDescriptionPopup__techContainer">
+										<div className="mobileDescriptionPopup__techContainer" key={i}>
 											<img
+												className="mobileDescriptionPopup__techImg"
 												src={tech.img}
 												alt=""
 											/>
@@ -77,20 +99,17 @@ const MobileDescriptionPopup = ({
 									);
 								});
 							}
-							return undefined
+							return undefined;
 						})}
 					</div>
-					<div className="mobileDescriptionPopup__arrowPrev">
+					<div
+						className="mobileDescriptionPopup__arrowPrev"
+						onClick={removeAnimation}
+					>
 						<SwiperButtonPrev />
 					</div>
 				</SwiperSlide>
 			</Swiper>
-			{/* <div className="mobileDescriptionPopup__arrow" onClick={descriptionSwiper.nextSlide()}>
-				<img
-					src="./assets/arrow-down-icon.svg"
-					alt="arrow"
-				/>
-			</div> */}
 		</div>
 	);
 };

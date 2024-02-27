@@ -1,152 +1,157 @@
 @import "../variables.scss";
 
 .descriptionBar {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 250px;
-  width: 100%;
-  background: $descriptionBar-bg;
-  z-index: 99;
-  transition: all .3s linear;
-  box-shadow: 0px -12px 22px 0px rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 250px;
+	width: 100%;
+	background: $descriptionBar-bg;
+	z-index: 99;
+	transition: all 0.3s linear;
+	box-shadow: 0px -12px 22px 0px rgba(0, 0, 0, 0.5);
 
-  &__container {
-    // width: 56%;
-    width: calc(46% + 150 * ((100vw - 1500px) / (1920 - 1500)));
-    height: 100%;
-    margin-left: auto;
-    position: relative;
-    transition: all .3s linear;
-    padding: 15px 15px 15px 0;
+	&__container {
+		// width: 56%;
+		width: calc(46% + 150 * ((100vw - 1500px) / (1920 - 1500)));
+		height: 100%;
+		margin-left: auto;
+		position: relative;
+		transition: all 0.3s linear;
+		padding: 15px 15px 15px 0;
 
-    @media screen and (min-width: 1000px) and (max-width: 1500px) {
-      width: calc(48% - 10 * ((100vw - 1000px) / (1500 - 1000)));
-    }
-  }
+		@media screen and (min-width: 1000px) and (max-width: 1500px) {
+			width: calc(48% - 10 * ((100vw - 1000px) / (1500 - 1000)));
+		}
+	}
 
-  &__text {
-    color: white;
-    font-size: 24px;
-    max-height: 150px;
-    overflow: auto;
-    scrollbar-color: $orange-color transparent;
+	&__text {
+		color: white;
+		font-size: 24px;
+		max-height: 150px;
+		overflow: auto;
+		scrollbar-color: $orange-color transparent;
 
-    @media screen and (max-width: 1200px) {
-      font-size: 20px;
-    }
-  }
+		@media screen and (max-width: 1200px) {
+			font-size: 20px;
+		}
+	}
 
-  &__text::-webkit-scrollbar {
-     background: rgb(22, 23, 22);
-     width: 8px;
-  }
+	&__text::-webkit-scrollbar {
+		background: rgb(22, 23, 22);
+		width: 8px;
+	}
 
-  &__text::-webkit-scrollbar-thumb {
-    background: $orange-color;
-    -webkit-border-radius: 1ex;
-  }
+	&__text::-webkit-scrollbar-thumb {
+		background: $orange-color;
+		-webkit-border-radius: 1ex;
+	}
 
-  &__buttonGroup {
-    width: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+	&__buttonGroup {
+		width: 150px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-  &__link {
-    width: 50px;
-    cursor: pointer;
-  }
+	&__link {
+		width: 50px;
+		cursor: pointer;
+	}
 
-  &__technologies {
-    color: $orange-color;
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+	&__technologies {
+		color: $orange-color;
+		font-size: 24px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
 
-  &__technologiesContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-  }
+	&__technologiesContainer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+	}
 
-  &__arrow {
-    width: 50px;
-    cursor: pointer;
-  }
+	&__arrow {
+		width: 50px;
+		cursor: pointer;
+	}
 
-  &__arrowBack {
-    width: 50px;
-    cursor: pointer;
-    transform: rotate(180deg);
-  }
+	&__arrowBack {
+		width: 50px;
+		cursor: pointer;
+		transform: rotate(180deg);
+	}
 
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+	}
 
-  &__technologiesFull {
-    color: white;
-  }
+	&__technologiesFull {
+		color: white;
+	}
 
-  &__technologiesGrid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,200px);
-    gap: 20px;
-  }
+	&__technologiesGrid {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 200px);
+		gap: 20px;
+	}
 
-  &__techItem {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-  }
+	&__techItem {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: 1px solid white;
+		padding: 5px;
+		box-sizing: border-box;
 
-  &__techTitle {
-    font-size: 20px;
-  }
+    height: 62px;
+	}
 
-  &__techImg {
-    width: 50px;
-  }
+ 
 
-  & .swiper-slide {
-    min-height: 220px;
-  }
+	&__techTitle {
+		font-size: 20px;
+
+	}
+
+	&__techImg {
+		width: 30px;
+	}
+
+	& .swiper-slide {
+		min-height: 220px;
+	}
 }
 
 .opacity-anim {
-animation: opacity .3s linear;
+	animation: opacity 0.3s linear;
 }
 @keyframes opacity {
-  0% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 0;
+	}
 
-  100% {
-    opacity: 1
-  }
+	100% {
+		opacity: 1;
+	}
 }
 
 .move-in {
-  transform: translateX(0)
+	transform: translateX(0);
 }
 
 .move-out {
-  transform: translateX(120%)
+	transform: translateX(120%);
 }
-
 
 .descriptionBar.hide {
-  transform: translate(0, 50%);
+	transform: translate(0, 50%);
 }
-
-

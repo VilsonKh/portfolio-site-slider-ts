@@ -68,20 +68,64 @@
 		transform: translateX(-50%);
 	}
 
-	&__github,&__website {
+	&__github,
+	&__website {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		color:white;
+		color: white;
 		text-decoration: none;
 	}
 
 	&__gridLayout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 50px;
+		padding: 5%;
+		padding-top: 20%;
+	}
+
+	&__techContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 150px;
+		position: relative;
+		opacity: 0;
+
 
 	}
 
+	&__techImg {
+		max-width: 100px;
+		margin-bottom: 20px;
+	}
+
 	&__techText {
-		color: white
+		color: white;
+		text-align: center;
+	}
+}
+
+.appearence {
+	transition: all .3s linear;
+	animation-name: in;
+	animation-duration: .3s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1; 
+	opacity: 1;
+}
+
+@keyframes in {
+	0% {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
 	}
 }

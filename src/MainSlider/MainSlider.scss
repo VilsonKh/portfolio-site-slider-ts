@@ -9,6 +9,7 @@
 		height: 100%;
 		object-fit: cover;
 		touch-action: none;
+		transition: all .3s linear;
 
 		@media screen and (min-width: 1000px) {
 			pointer-events: none;
