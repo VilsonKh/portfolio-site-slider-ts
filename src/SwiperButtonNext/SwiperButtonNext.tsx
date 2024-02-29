@@ -8,7 +8,7 @@ const SwiperButtonNext = () => {
 	};
 	return (
 		<button className="descriptionBar__arrow" onClick={onButtonClick}>
-			<img src="./assets/icon-arrow.svg" alt="" />
+			<img src="./assets/arrow.svg" alt="" style={{transform: "rotate(90deg)"}} />
 		</button>
 	);
 };

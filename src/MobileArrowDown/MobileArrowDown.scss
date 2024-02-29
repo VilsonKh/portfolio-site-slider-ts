@@ -1,9 +1,9 @@
 .mobileThumbs__arrowUp {
   position: absolute;
-  top: 85%;
   left: 50%;
-  width: 50px;
+  bottom: 100px;
+  width: 75px;
   height: 50px;
-  transform: translateX(-50%) rotate(180deg);
+  transform: translateX(-50%);
   z-index: 1;
 }

@@ -16,7 +16,7 @@ const DescriptionBar = ({ slideIndex, isHide}: { slideIndex: any, isHide: boolea
 								<SwiperSlide>
 									<p className="descriptionBar__text ">{project.description}</p>
 									<div className="descriptionBar__footer">
-										<div className="descriptionBar__technologiesContainer">
+										<div className="descriptionBar__technologiesContainerShort">
 											<p className="descriptionBar__technologies">{project.technologies.preview}</p>
 											<SwiperButtonNext />
 										</div>

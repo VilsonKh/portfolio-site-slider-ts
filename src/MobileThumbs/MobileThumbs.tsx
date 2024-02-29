@@ -51,7 +51,8 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 				onClick={() => setIsMobileThumbHide(!isMobileThumbHide)}
 			>
 				<img
-					src="./assets/arrow-down-icon.svg"
+					className="mobileThumbs__arrowImg"
+					src="./assets/arrow.svg"
 					alt="arrow-down"
 				/>
 			</button>

@@ -66,20 +66,28 @@
 		text-transform: uppercase;
 	}
 
+  &__technologiesContainerShort {
+    display: flex;
+  }
+
 	&__technologiesContainer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		color: white;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 	}
 
 	&__arrow {
-		width: 50px;
+		width: 65px;
 		cursor: pointer;
 	}
 
 	&__arrowBack {
-		width: 50px;
+		width: 65px;
 		cursor: pointer;
 		transform: rotate(180deg);
 	}

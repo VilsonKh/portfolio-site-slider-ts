@@ -9,27 +9,40 @@
 	left: 0;
 	z-index: 1000;
 
+	& .swiper-slide {
+		height: 100vh;
+	}
+
 	&__close {
 		width: 50px;
-		height: 10px;
-		background-color: $orange-color;
+		height: 50px;
 		position: absolute;
 		top: 5%;
 		right: 5%;
-		transform: rotate(45deg);
-		z-index: 100;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-		&::before {
-			content: "";
+		&Line {
 			width: 50px;
 			height: 10px;
 			background-color: $orange-color;
-			position: absolute;
-			top: 5%;
-			right: 5%;
-			transform: rotate(90deg);
+			transform: rotate(45deg);
+			z-index: 100;
+
+			&::before {
+				content: "";
+				width: 50px;
+				height: 10px;
+				background-color: $orange-color;
+				position: absolute;
+				top: 5%;
+				right: 5%;
+				transform: rotate(90deg);
+			}
 		}
 	}
+
 	&__text {
 		margin-bottom: 50px;
 		width: 100%;
@@ -81,9 +94,18 @@
 	&__gridLayout {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 50px;
-		padding: 5%;
-		padding-top: 20%;
+		gap: 25px;
+		padding: 25px;
+		margin-top: 75px;
+		margin-bottom: 50px;
+		height: 60%;
+		overflow-x: scroll;
+		box-sizing: border-box;
+		scrollbar-color: #e75d02 transparent;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-transform-style: preserve-3d;
+		-webkit-perspective: 0;
 	}
 
 	&__techContainer {
@@ -91,15 +113,21 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 150px;
+		max-width: 150px;
+		max-height: 120px;
 		position: relative;
+		transform: translateX(100px);
 		opacity: 0;
-
-
+		justify-self: center;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-transform-style: preserve-3d;
+		-webkit-perspective: 0;
 	}
 
 	&__techImg {
-		max-width: 100px;
+		max-width: 75px;
+		object-fit: cover;
 		margin-bottom: 20px;
 	}
 
@@ -110,22 +138,24 @@
 }
 
 .appearence {
-	transition: all .3s linear;
+	transition: all 0.3s linear;
 	animation-name: in;
-	animation-duration: .3s;
+	animation-duration: 0.3s;
 	animation-timing-function: linear;
-	animation-iteration-count: 1; 
+	animation-iteration-count: 1;
 	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	-webkit-perspective: 0;
 }
 
 @keyframes in {
 	0% {
 		transform: translateX(100px);
-		opacity: 0;
 	}
 
 	100% {
 		transform: translateX(0);
-		opacity: 1;
 	}
 }

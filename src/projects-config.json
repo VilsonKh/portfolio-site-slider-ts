@@ -66,7 +66,7 @@
 			"full": [
 				{ "title": "jQuery", "img": "./assets/Jquery.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{ "title": "CSS animations", "img": "" }
 			]
 		}
@@ -98,7 +98,7 @@
 			"full": [
 				{ "title": "JS", "img": "./assets/JS.svg" },
 				{ "title": "Firestore", "img": "./assets/firestore.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" }
 			]
 		}
@@ -114,7 +114,7 @@
 			"full": [
 				{ "title": "JS", "img": "./assets/JS.svg" },
 				{ "title": "AnimeJS", "img": "" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" }
 			]
 		}
@@ -129,7 +129,7 @@
 			"preview": "JQuery, CSS, HTML",
 			"full": [
 				{ "title": "jQuery", "img": "./assets/Jquery.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" }
 			]
 		}
@@ -144,7 +144,7 @@
 			"preview": "HTML, CSS, jQuery",
 			"full": [
 				{ "title": "jQuery", "img": "./assets/Jquery.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" },
 				{ "title": "adaptive layout", "img": "" },
 				{ "title": "BEM", "img": "" }
@@ -162,7 +162,7 @@
 			"full": [
 				{ "title": "jQuery", "img": "./assets/Jquery.svg" },
 				{ "title": "HTML", "img": "./assets/HTML.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" }
+				{ "title": "CSS", "img": "./assets/CSS.svg" }
 			]
 		}
 	},
@@ -193,7 +193,7 @@
 			"preview": "HTML, CSS, BEM",
 			"full": [
 				{ "title": "HTML", "img": "./assets/HTML.svg" },
-				{ "title": "CSS", "img": "./assets/css.svg" },
+				{ "title": "CSS", "img": "./assets/CSS.svg" },
 				{"title" : "BEM", "img" : ""}
 			]
 		}

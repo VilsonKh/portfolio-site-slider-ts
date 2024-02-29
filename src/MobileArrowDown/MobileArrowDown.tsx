@@ -7,7 +7,7 @@ const MobileArrowDown = ({setIsMobileThumbHide, isMobileThumbHide}: {setIsMobile
 			onClick={() => setIsMobileThumbHide(!isMobileThumbHide)}
 		>
 			<img
-				src="./assets/arrow-down-icon.svg"
+				src="./assets/arrow.svg"
 				alt="arrow-up"
 			/>
 		</button>

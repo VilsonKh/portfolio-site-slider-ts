@@ -15,7 +15,7 @@ const MobileDescriptionPopup = ({
 }) => {
 	function addAnimation() {
 		const animatedElements = document.querySelectorAll(".mobileDescriptionPopup__techContainer");
-		console.log(animatedElements)
+		console.log(animatedElements);
 		animatedElements.forEach((elem, i) => {
 			setTimeout(() => {
 				elem.classList.add("appearence");
@@ -36,10 +36,20 @@ const MobileDescriptionPopup = ({
 				className="mobileDescriptionPopup__close"
 				onClick={() => {
 					setIsDescriptionPopup(false);
-					removeAnimation()
+					removeAnimation();
 				}}
-			></div>
-			<Swiper>
+			>
+				<div className="mobileDescriptionPopup__closeLine"></div>
+			</div>
+			<Swiper
+				onSlideChangeTransitionStart={(swiper: any) => {
+					if (swiper.activeIndex === 1) {
+						addAnimation();
+					} else {
+						removeAnimation();
+					}
+				}}
+			>
 				<SwiperSlide>
 					<div className="mobileDescriptionPopup__container">
 						{projectsConfig.map((project: any, i) => {
@@ -88,7 +98,10 @@ const MobileDescriptionPopup = ({
 							if (i === currentIndex) {
 								return project.technologies.full.map((tech: any, i) => {
 									return (
-										<div className="mobileDescriptionPopup__techContainer" key={i}>
+										<div
+											className="mobileDescriptionPopup__techContainer"
+											key={i}
+										>
 											<img
 												className="mobileDescriptionPopup__techImg"
 												src={tech.img}
