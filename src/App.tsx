@@ -34,6 +34,7 @@ function App() {
 		mobileThumbsSwiper: mobileThumbsSwiper,
 		setMainSwiper: setMainSwiper,
 		currentIndex: currentIndex,
+		setIsMobileThumbHide: setIsMobileThumbHide
 	};
 
 	const desktopLayoutProps = {

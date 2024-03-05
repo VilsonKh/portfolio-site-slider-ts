@@ -2,7 +2,6 @@ import "./MobileThumbs.scss";
 import projectsConfig from "../projects-config.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller } from "swiper/modules";
-import { useState } from "react";
 
 interface IMobileThumbs {
 	mainSwiper: any;
@@ -25,6 +24,7 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 					modules={[Controller]}
 					controller={{ control: mainSwiper }}
 					centeredSlides={true}
+					slideToClickedSlide= {true}
 				>
 					{projectsConfig.map((project, index): JSX.Element => {
 						return (
@@ -32,7 +32,7 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 								data-index={index}
 								key={index}
 							>
-						<div className="mobileThumbs__slide-wrapper">
+								<div className="mobileThumbs__slide-wrapper">
 									<div className="mobileThumbs__slide-container">
 										<img
 											src={project.img.link}
@@ -40,7 +40,7 @@ const MobileThumbs = ({ mainSwiper, setMobileThumbsSwiper, setIsMobileThumbHide,
 											className="mobileThumbs__img"
 										/>
 									</div>
-						</div>
+								</div>
 							</SwiperSlide>
 						);
 					})}

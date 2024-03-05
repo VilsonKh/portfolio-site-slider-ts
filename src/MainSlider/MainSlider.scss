@@ -9,7 +9,11 @@
 		height: 100%;
 		object-fit: cover;
 		touch-action: none;
-		transition: all .3s linear;
+		transition: all 0.3s linear;
+
+		@media screen and (min-width: 500px) {
+			height: 100vh;
+		}
 
 		@media screen and (min-width: 1000px) {
 			pointer-events: none;
@@ -19,14 +23,15 @@
 		@media screen and (max-width: 1000px) {
 			object-fit: none;
 			width: auto;
-			height: auto;
+			height: 100vh;
 			max-width: none;
+			object-fit: cover;
 		}
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.mainSlider .swiper-slide {
-		overflow: scroll;
+		overflow: hidden;
 	}
 }

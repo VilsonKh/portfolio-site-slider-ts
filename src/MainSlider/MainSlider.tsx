@@ -12,6 +12,7 @@ const MainSlider = ({
 	windowWidth,
 	currentIndex,
 	isHide,
+	setIsMobileThumbHide,
 }: {
 	isHide: boolean;
 	thumbsSwiper: any;
@@ -20,6 +21,7 @@ const MainSlider = ({
 	setCurrentIndex: (value: any) => void;
 	mobileThumbsSwiper: any;
 	currentIndex: number;
+	setIsMobileThumbHide: (value: boolean) => void;
 }) => {
 	const sliderParams = {
 		initialSlide: 1,
@@ -45,6 +47,7 @@ const MainSlider = ({
 						<GestureParams windowWidth={windowWidth}>
 							<img
 								className="mainSlider__img"
+								onClick={() => setIsMobileThumbHide(true)}
 								src={project.img.link}
 								alt={project.title}
 								style={

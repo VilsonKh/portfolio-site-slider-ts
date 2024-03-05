@@ -3,6 +3,7 @@ import MobileThumbs from "../MobileThumbs/MobileThumbs";
 import MobileArrowDown from "../MobileArrowDown/MobileArrowDown";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import MobileDescriptionPopup from "../MobileDescriptionPopup/MobileDescriptionPopup";
+import TouchMovePopup from "../TouchMovePopup/TouchMovePopup";
 
 const MobileLayout = ({
 	mainSwiper,
@@ -18,6 +19,7 @@ const MobileLayout = ({
 	currentIndex: number;
 }) => {
 	const [isDescriptionPopup, setIsDescriptionPopup] = useState<boolean>(false);
+	const [isTouchMovePopup, setIsTouchMovePopup] = useState<boolean>(true);
 
 	return (
 		<>
@@ -33,6 +35,7 @@ const MobileLayout = ({
 			/>
 			<BurgerButton setIsDescriptionPopup={setIsDescriptionPopup} />
 			{isDescriptionPopup && <MobileDescriptionPopup setIsDescriptionPopup={setIsDescriptionPopup} currentIndex={currentIndex}/>}
+			{isTouchMovePopup && sessionStorage.getItem("isNewVisit") === null &&<TouchMovePopup setIsTouchMovePopup={setIsTouchMovePopup}/>}
 		</>
 	);
 };

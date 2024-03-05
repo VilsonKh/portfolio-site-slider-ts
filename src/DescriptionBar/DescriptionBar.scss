@@ -79,11 +79,14 @@
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+		height: 100%;
 	}
 
 	&__arrow {
-		width: 65px;
+		width: 50px;
 		cursor: pointer;
+
+
 	}
 
 	&__arrowBack {
@@ -109,7 +112,14 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 200px);
-		gap: 20px;
+		grid-template-rows: repeat(auto-fill, 62px);
+		gap: 15px;
+		overflow: scroll;
+		scrollbar-color: $orange-color transparent;
+
+		@media screen and (min-width: 1000px) and (max-width: 1478px) {
+			height: 100%;
+		}
 	}
 
 	&__techItem {
