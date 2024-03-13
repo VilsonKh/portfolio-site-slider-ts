@@ -35,6 +35,16 @@ const MainSlider = ({
 		simulateTouch: true,
 	};
 
+	function imgStyleConf(project: any) {
+		if (isHide) {
+			return { transform: " translate(0)" };
+		} else if (windowWidth < 1000) {
+			return { transform: `translate(${project.img.mobileShift})%` };
+		} else {
+			return { transform: `translate(${project.img.desktopShift})%` };
+		}
+	}
+
 	return (
 		<Swiper
 			className="mainSlider"
@@ -44,15 +54,18 @@ const MainSlider = ({
 			{projectsConfig.map((project, index): JSX.Element => {
 				return (
 					<SwiperSlide key={index}>
-						<GestureParams windowWidth={windowWidth}>
+						<GestureParams windowWidth={windowWidth} currentIndex={currentIndex}>
 							<img
 								className="mainSlider__img"
 								onClick={() => setIsMobileThumbHide(true)}
 								src={project.img.link}
 								alt={project.title}
 								style={
-									isHide || windowWidth < 1000 ? { transform: "translate(0)" } : { transform: `translate(${project.img.shift}%)` }
+									isHide || windowWidth < 1000
+										? { transform: "translate(0)" }
+										: { transform: `translate(${project.img.desktopShift}%)` }
 								}
+								// @ts-ignore: Unreachable code error
 							/>
 						</GestureParams>
 					</SwiperSlide>

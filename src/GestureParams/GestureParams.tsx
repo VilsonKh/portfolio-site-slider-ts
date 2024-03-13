@@ -1,10 +1,11 @@
 import { animated, useSpring } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import "./GestureParams.scss";
+import projectsConfig from "../projects-config.json";
 
-const GestureParams = ({ children, windowWidth }: { children: JSX.Element; windowWidth: number }) => {
+const GestureParams = ({ children, windowWidth, currentIndex }: { children: JSX.Element; windowWidth: number; currentIndex: number }) => {
 	const containerRef = useRef<HTMLImageElement>(null);
 
 	// @ts-ignore: Unreachable code error
@@ -15,9 +16,7 @@ const GestureParams = ({ children, windowWidth }: { children: JSX.Element; windo
 		rotateZ: 0,
 	}));
 
-	const [width, height] = useWindowSize()
-
-console.log(height)
+	const [width, height] = useWindowSize();
 
 	useEffect(() => {
 		const handler = (e: Event) => e.preventDefault();
@@ -31,10 +30,20 @@ console.log(height)
 		};
 	}, []);
 
+	useEffect(() => {
+		console.log('call')
+		projectsConfig.forEach((project, index) => {
+			if (index === currentIndex) {
+				// @ts-ignore: Unreachable code error
+				set.set({ x: project.img.mobileShift, y: 0 });
+			}
+		});
+	}, [currentIndex]);
+
 	useGesture(
 		{
 			onDrag: ({ first, pinching, cancel, offset: [x, y], dragging }) => {
-				set.start({ x, y });
+				set.start({ x: x, y: y });
 				// @ts-ignore: Unreachable code error
 				if (pinching) {
 					return cancel();
@@ -63,35 +72,32 @@ console.log(height)
 			drag: {
 				target: containerRef,
 				from: () => [style.x.get(), style.y.get()],
-				bounds: (arg) => (
-					{
+				bounds: (arg) => ({
 					// @ts-ignore: Unreachable code error
 					right: (arg?.target.getBoundingClientRect().width - arg?.target.clientWidth) / 2,
 					left:
-					// @ts-ignore: Unreachable code error
+						// @ts-ignore: Unreachable code error
 						-(arg?.target.getBoundingClientRect().width - width) +
 						// @ts-ignore: Unreachable code error
-						((arg?.target.getBoundingClientRect().width - arg?.target.clientWidth) / 2),
-					// @ts-ignore: Unreachable code error
-					top: -(arg?.target.getBoundingClientRect().height - height) +
-					// @ts-ignore: Unreachable code error
-					(arg?.target.getBoundingClientRect().height - arg?.target.clientHeight) / 2 ,
+						(arg?.target.getBoundingClientRect().width - arg?.target.clientWidth) / 2,
+					top:
+						// @ts-ignore: Unreachable code error
+						-(arg?.target.getBoundingClientRect().height - height) +
+						// @ts-ignore: Unreachable code error
+						(arg?.target.getBoundingClientRect().height - arg?.target.clientHeight) / 2,
 					// @ts-ignore: Unreachable code error
 					bottom:
-					// @ts-ignore: Unreachable code error
-					(arg?.target.getBoundingClientRect().height - arg?.target.clientHeight) / 2
-				,
+						// @ts-ignore: Unreachable code error
+						(arg?.target.getBoundingClientRect().height - arg?.target.clientHeight) / 2,
 				}),
 				rubberband: 0.2,
 			},
 			pinch: {
-				scaleBounds: { min: 1 , max: 2},
+				scaleBounds: { min: 1, max: 2 },
 				rubberband: 0.2,
 			},
 		}
 	);
-
-	console.log(window.screen.height)
 
 	return (
 		<animated.div

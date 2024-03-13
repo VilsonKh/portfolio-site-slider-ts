@@ -1,7 +1,7 @@
 [
 	{
 		"title": "entertainment-app",
-		"img": { "link": "./assets/entertainment-app-min.webp", "shift": 20 },
+		"img": { "link": "./assets/entertainment-app-min.webp", "desktopShift": 20, "mobileShift": -100 },
 		"description": "Entertainment App is a React-based project that serves as a convenient application for browsing and tracking movies and TV shows. The app features a content library that allows users to discover their favorite films and series, add bookmarks, and navigate between different tabs and content cards.",
 		"mainLink": "https://projects.devilson.me/entertainment-app",
 		"githubLink": "https://github.com/VilsonKh/entertainment-app",
@@ -22,7 +22,7 @@
 	},
 	{
 		"title": "invoices-app",
-		"img": { "link": "./assets/invoices-app-min.webp", "shift": 20 },
+		"img": { "link": "./assets/invoices-app-min.webp", "desktopShift": 20, "mobileShift": -250 },
 		"description": "The Invoice App simplifies the process of creating invoices through a user-friendly form. Users can input necessary details, such as client information, itemized charges, and due dates. The app employs the React Hook Form library for form validation, ensuring that all information entered is accurate and complete. If an invoice becomes irrelevant or is no longer needed, the app offers a deletion process. The app covered with tests.",
 		"mainLink": "https://projects.devilson.me/invoice-app",
 		"githubLink": "https://github.com/VilsonKh/invoice-app",
@@ -41,7 +41,7 @@
 	},
 	{
 		"title": "audiophile",
-		"img": { "link": "./assets/audiophile-min.webp", "shift": 20 },
+		"img": { "link": "./assets/audiophile-min.webp", "desktopShift": 20, "mobileShift": -200 },
 		"description": "The Audiophile project features user-friendly checkouts form with validation. Users have the convenience of adding products to their shopping cart as they browse. The website is responsive, and the shopping cart persists across pages using localStorage. An integrated order form simplifies order creation.",
 		"mainLink": "https://projects.devilson.me/audiphile",
 		"githubLink": "https://github.com/VilsonKh/audiophile",
@@ -57,7 +57,7 @@
 	},
 	{
 		"title": "photo-studio",
-		"img": { "link": "./assets/photo-studio-min.webp", "shift": 20 },
+		"img": { "link": "./assets/photo-studio-min.webp", "desktopShift": 20, "mobileShift": -180 },
 		"description": "The website offers information, highlighting the studio's portfolio, services, and expertise. It features a captivating collection of photographs, demonstrating the studio's artistic vision and technical skill. The website also includes detailed information about the studio's services, such as portrait, group or family fotography.",
 		"mainLink": "https://projects.devilson.me/photo-studio",
 		"githubLink": "https://github.com/VilsonKh/photo-studio",
@@ -73,7 +73,7 @@
 	},
 	{
 		"title": "rock-paper-scissors-lizard-spock",
-		"img": { "link": "./assets/rock-paper-scissors-lizard-spock-min.webp", "shift": 20 },
+		"img": { "link": "./assets/rock-paper-scissors-lizard-spock-min.webp", "desktopShift": 20, "mobileShift": -250 },
 		"description": "'Rock, Paper, Scissors, Lizard, Spock' is an engaging and interactive game where players compete against the computer in the classic game of 'Rock, Paper, Scissors' expanded to include five choices.",
 		"mainLink": "https://projects.devilson.me/rock-paper-scissors",
 		"githubLink": "https://github.com/VilsonKh/rock-paper-scissors-game",
@@ -89,9 +89,9 @@
 	},
 	{
 		"title": "mesto",
-		"img": { "link": "./assets/mesto-min.webp", "shift": 20 },
+		"img": { "link": "./assets/mesto-min.webp", "desktopShift": 20, "mobileShift": -250 },
 		"description": "The website allows users to add, delete, and like images, as well as edit their profile and change avatar. The user's photos are stored in a Firestore database. Also it includes form validation to ensure user input is correct and checks for the presence of images at the specified user-provided addresses.",
-		"mainLink": "projects/devilson.me/mesto",
+		"mainLink": "https://projects.devilson.me/mesto",
 		"githubLink": "https://github.com/VilsonKh/mesto",
 		"technologies": {
 			"preview": "JS, CSS, Firebase",
@@ -105,9 +105,9 @@
 	},
 	{
 		"title": "planets-fact",
-		"img": { "link": "./assets/planets-fact-min.webp", "shift": 20 },
+		"img": { "link": "./assets/planets-fact-min.webp", "desktopShift": 20, "mobileShift": -150 },
 		"description": "Planets Facts project dedicated to fascinating facts about the planets of our solar system. Here, you can discover captivating details about each planet, their unique features.",
-		"mainLink": "projects/devilson.me/planets-fact",
+		"mainLink": "https://projects.devilson.me/planets-fact",
 		"githubLink": "https://github.com/VilsonKh/planet-facts",
 		"technologies": {
 			"preview": "JS, CSS, HTML",
@@ -121,7 +121,7 @@
 	},
 	{
 		"title": "theater",
-		"img": { "link": "./assets/theater-min.webp", "shift": 20 },
+		"img": { "link": "./assets/theater-min.webp", "desktopShift": 20, "mobileShift": -150 },
 		"description": "The website offers visitors an opportunity to explore the theater's diverse productions. The website features a captivating slider showcasing images from past perfomances, providing visitors with a glimpse into the visually stunning and emotive world of theater. Furthermore, the website offers a convenient callback form allowing visitors to easily get in touch with the theater.",
 		"mainLink": "https://projects.devilson.me/theater",
 		"githubLink": "https://github.com/VilsonKh/theatre",
@@ -136,7 +136,7 @@
 	},
 	{
 		"title": "russian-travel",
-		"img": { "link": "./assets/russian-travel-min.webp", "shift": 20 },
+		"img": { "link": "./assets/russian-travel-min.webp", "desktopShift": 20, "mobileShift": -150 },
 		"description": "The website offers a wide range of features and resources to enhance your travel experience in Russia. It provides users with access to comprehensive and well-researched textual articles that cover various aspects of Russian travel, such as popular destinations, historical landmarks, cultural experiences, and outdoor adventures.",
 		"mainLink": "https://projects.devilson.me/russian-travel",
 		"githubLink": "https://github.com/VilsonKh/russian-travel",
@@ -153,7 +153,7 @@
 	},
 	{
 		"title": "singer-landing",
-		"img": { "link": "./assets/singer-landing-min.webp", "shift": 20 },
+		"img": { "link": "./assets/singer-landing-min.webp", "desktopShift": 20, "mobileShift": -150 },
 		"description": "This website allows visitors to explore the singer's discography, biography, upcoming events, and latest news. Also video and music were implemented.",
 		"mainLink": "https://projects.devilson.me/singer-landing",
 		"githubLink": "https://github.com/VilsonKh/singer-landing",
@@ -168,7 +168,7 @@
 	},
 	{
 		"title": "tribe",
-		"img": { "link": "./assets/tribe-min.webp", "shift": 20 },
+		"img": { "link": "./assets/tribe-min.webp", "desktopShift": 20, "mobileShift": -150 },
 		"description": "The website provides information about the agency's services, musicians, and upcoming events. It uses animations and sliders to create an engaging experience. The sliders display musician profiles and past performances. The website is responsive, ensuring a seamless experience across devices.",
 		"mainLink": "https://projects.devilson.me/tribe",
 		"githubLink": "https://github.com/VilsonKh/tribe",
@@ -185,9 +185,9 @@
 	},
 	{
 		"title": "how-to-learn",
-		"img": { "link": "./assets/how-to-learn-min.webp", "shift": 20 },
+		"img": { "link": "./assets/how-to-learn-min.webp", "desktopShift": 20, "mobileShift": -100 },
 		"description": "The project provides users with access to various types of information aimed at enhancing learning effectiveness, including textual articles, infographics, video materials, and links to useful resources.",
-		"mainLink": "projects.devilson.me/how-to-learn",
+		"mainLink": "https://projects.devilson.me/how-to-learn",
 		"githubLink": "https://github.com/VilsonKh/how-to-learn",
 		"technologies": {
 			"preview": "HTML, CSS, BEM",

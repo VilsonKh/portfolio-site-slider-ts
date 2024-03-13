@@ -4,16 +4,16 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 40%;
+	height: 30%;
 	background: $mobileThumbs-bg;
 	z-index: 10;
 	transition: all 0.3s linear;
-	min-height: 358px;
+	min-height: 258px;
 
 	&__container {
 		position: relative;
 		padding: 30px;
-		height: 80%;
+		height: 70%;
 		display: flex;
 		align-items: center;
 	}
@@ -33,44 +33,11 @@
 	& .swiper-slide {
 		display: flex;
 		align-items: center;
-		transform: rotate(90deg);
 		justify-content: center;
 	}
 
 	&__slide-wrapper {
-		@media screen and (min-width: 390px) {
-			// &::before {
-			// 	content: "";
-			// 	display: block;
-			// 	position: absolute;
-			// 	border-bottom: 2px solid white;
-			// 	border-right: 3px solid white;
-			// 	width: 70px;
-			// 	height: 40px;
-			// 	top: calc(148px + 6 * ((100vw - 390px) / (999 - 390)));
-			// 	right: calc(-23px + 90 * ((100vw - 390px) / (999 - 390)));
-			// 	z-index: 10000;
-			// 	transform: skew(20deg);
-			// }
-
-			// &::after {
-			// 	content: "";
-			// 	display: block;
-			// 	position: absolute;
-			// 	border-top: 2px solid white;
-			// 	border-left: 3px solid white;
-			// 	width: 70px;
-			// 	height: 40px;
-			// 	top: calc(-12px - 20 * ((100vw - 390px) / (432 - 390)));
-			// 	left: calc(-20px - 5 * ((100vw - 390px) / (432 - 390)));
-			// 	transform: skew(20deg);
-
-			// 	@media screen and (min-width: 432px) {
-			// 		top: 90px;
-			// 		left: calc(-25px + 95 * ((100vw -  432px) / (999 - 423)));
-			// 	}
-			// }
-		}
+		transform: rotate(90deg);
 	}
 
 	&__slide-container {
@@ -81,7 +48,6 @@
 		outline: 1px solid gray;
 		outline-offset: 5px;
 		max-width: 120px;
-		
 	}
 
 	&__arrowDown {
@@ -89,19 +55,20 @@
 		top: 85%;
 		left: 50%;
 		width: 75px;
-		height: 50px;
+		height: 30px;
 		transform: translateX(-50%);
 		z-index: 10;
 	}
 
 	&__arrowImg {
 		transform: rotate(180deg);
+		height: 100%;
 	}
 }
 
 .topTriangle {
 	width: 100%;
-	height: 100px;
+	height: 40px;
 	background: transparent;
 	opacity: 0.9;
 	position: absolute;
@@ -109,47 +76,23 @@
 	bottom: 100%;
 	z-index: 1000;
 
-	@media screen and (min-width: 750px) and (max-width: 1000px) {
-		height: 75px;
-	}
-
-	@media screen and (max-width: 750px) {
-		height: 50px;
-	}
-
 	&::before {
 		position: absolute;
 		clip-path: polygon(0 0, 0% 100%, 100% 100%);
 		background: $orange-color;
 		content: "";
 		width: 100%;
-		height: 100px;
+		height: 40px;
 		z-index: 10;
-
-		@media screen and (min-width: 750px) and (max-width: 1000px) {
-			height: 75px;
-		}
-
-		@media screen and (max-width: 750px) {
-			height: 50px;
-		}
 	}
 }
 
 .bottomTriangle {
 	width: 100%;
-	height: 100px;
+	height: 40px;
 	background: transparent;
 	position: absolute;
 	filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.75));
-
-	@media screen and (max-width: 750px) {
-		height: 50px;
-	}
-
-	@media screen and (min-width: 750px) and (max-width: 1000px) {
-		height: 75px;
-	}
 
 	&::before {
 		position: absolute;
@@ -157,16 +100,8 @@
 		background: $orange-color;
 		content: "";
 		width: 100%;
-		height: 100px;
+		height: 40px;
 		z-index: 10;
 		inset: 0;
-
-		@media screen and (max-width: 750px) {
-			height: 50px;
-		}
-
-		@media screen and (min-width: 750px) and (max-width: 1000px) {
-			height: 75px;
-		}
 	}
 }
