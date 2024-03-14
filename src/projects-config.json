@@ -43,7 +43,7 @@
 		"title": "audiophile",
 		"img": { "link": "./assets/audiophile-min.webp", "desktopShift": 20, "mobileShift": -200 },
 		"description": "The Audiophile project features user-friendly checkouts form with validation. Users have the convenience of adding products to their shopping cart as they browse. The website is responsive, and the shopping cart persists across pages using localStorage. An integrated order form simplifies order creation.",
-		"mainLink": "https://projects.devilson.me/audiphile",
+		"mainLink": "https://projects.devilson.me/audiophile",
 		"githubLink": "https://github.com/VilsonKh/audiophile",
 		"technologies": {
 			"preview": "jQuery, SCSS",

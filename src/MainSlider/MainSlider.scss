@@ -11,7 +11,7 @@
 		touch-action: none;
 		transition: all 0.3s linear;
 
-		@media screen and (min-width: 500px) {
+		@media screen and (min-width: 500px) and (max-width: 1000px) {
 			height: 100vh;
 		}
 
